@@ -20,15 +20,15 @@
 
 // Fixes Gutenberg's cover block color picker.
 .components-circular-option-picker {
-    &__option {
-        border-radius: 50%;
-    }
+  &__option {
+    border-radius: 50%;
+  }
 }
 
 // Matches the page title font weight.
 .editor-post-title .editor-post-title {
-    &__input {
-        font-size: $h1-font-size;
-        font-weight: $headings-font-weight;
-    }
+  &__input {
+    font-size: $h1-font-size;
+    font-weight: $headings-font-weight;
+  }
 }

@@ -13,9 +13,9 @@
 // example: @include translate(0);
 
 @mixin translate($value) {
-    transform: translateZ($value);
-    transform: translateZ($value);
-    transform: translateZ($value);
-    transform: translateZ($value);
-    transform: translateZ($value);
+  transform: translateZ($value);
+  transform: translateZ($value);
+  transform: translateZ($value);
+  transform: translateZ($value);
+  transform: translateZ($value);
 }

@@ -6,14 +6,11 @@ $utilities: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $utilities: map-merge(
   (
-    
     "align": (
       property: vertical-align,
       class: align,
       values: baseline top middle bottom text-bottom text-top
     ),
-    
-    
     "float": (
       responsive: true,
       property: float,
@@ -23,9 +20,6 @@ $utilities: map-merge(
         none: none,
       )
     ),
-    
-    
-    
     "opacity": (
       property: opacity,
       values: (
@@ -36,14 +30,10 @@ $utilities: map-merge(
         100: 1,
       )
     ),
-    
-    
     "overflow": (
       property: overflow,
       values: auto hidden visible scroll,
     ),
-    
-    
     "display": (
       responsive: true,
       print: true,
@@ -51,8 +41,6 @@ $utilities: map-merge(
       class: d,
       values: inline inline-block block grid table table-row table-cell flex inline-flex none
     ),
-    
-    
     "shadow": (
       property: box-shadow,
       class: shadow,
@@ -63,8 +51,6 @@ $utilities: map-merge(
         none: none,
       )
     ),
-    
-    
     "position": (
       property: position,
       values: static relative absolute fixed sticky
@@ -96,8 +82,6 @@ $utilities: map-merge(
         y: translateY(-50%),
       )
     ),
-    
-    
     "border": (
       property: border,
       values: (
@@ -145,9 +129,6 @@ $utilities: map-merge(
       class: border,
       values: $border-widths
     ),
-    
-    
-    
     "width": (
       property: width,
       class: w,
@@ -200,9 +181,6 @@ $utilities: map-merge(
       class: min-vh,
       values: (100: 100vh)
     ),
-    
-    
-    
     "flex": (
       responsive: true,
       property: flex,
@@ -305,9 +283,6 @@ $utilities: map-merge(
         last: 6,
       ),
     ),
-    
-    
-    
     "margin": (
       responsive: true,
       property: margin,
@@ -350,7 +325,6 @@ $utilities: map-merge(
       class: ms,
       values: map-merge($spacers, (auto: auto))
     ),
-    
     "negative-margin": (
       responsive: true,
       property: margin,
@@ -393,7 +367,6 @@ $utilities: map-merge(
       class: ms,
       values: $negative-spacers
     ),
-    
     "padding": (
       responsive: true,
       property: padding,
@@ -436,9 +409,6 @@ $utilities: map-merge(
       class: ps,
       values: $spacers
     ),
-    
-    
-    
     "font-family": (
       property: font-family,
       class: font,
@@ -509,8 +479,6 @@ $utilities: map-merge(
       values: (break: break-word),
       rtl: false
     ),
-    
-    
     "color": (
       property: color,
       class: text,
@@ -521,8 +489,8 @@ $utilities: map-merge(
         $utilities-text-colors,
         (
           "muted": $text-muted,
-          "black-50": rgba($black, 0.5), 
-          "white-50": rgba($white, 0.5), 
+          "black-50": rgba($black, 0.5),
+          "white-50": rgba($white, 0.5),
           "reset": inherit,
         )
       )
@@ -537,8 +505,6 @@ $utilities: map-merge(
         100: 1
       )
     ),
-    
-    
     "background-color": (
       property: background-color,
       class: bg,
@@ -563,13 +529,11 @@ $utilities: map-merge(
         100: 1
       )
     ),
-    
     "gradient": (
       property: background-image,
       class: bg,
       values: (gradient: var(--#{$variable-prefix}gradient))
     ),
-    
     "user-select": (
       property: user-select,
       values: all auto none
@@ -579,8 +543,6 @@ $utilities: map-merge(
       class: pe,
       values: none auto,
     ),
-    
-    
     "rounded": (
       property: border-radius,
       class: rounded,
@@ -614,8 +576,6 @@ $utilities: map-merge(
       class: rounded-start,
       values: (null: $border-radius)
     ),
-    
-    
     "visibility": (
       property: visibility,
       class: null,
@@ -624,7 +584,6 @@ $utilities: map-merge(
         invisible: hidden,
       )
     )
-    
   ),
   $utilities
 );

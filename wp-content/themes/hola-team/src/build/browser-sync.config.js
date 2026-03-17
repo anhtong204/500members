@@ -1,6 +1,6 @@
 module.exports = {
-	"proxy": "code-base.local",
+	"proxy": "500members.local/",
 	"notify": true,
 	"files": ["./assets/css/*.min.css", "./assets/css/*.css", "./assets/js/*.min.js", "./**/*.php"],
-	"port": 7777
+	"port": 3000
 };
