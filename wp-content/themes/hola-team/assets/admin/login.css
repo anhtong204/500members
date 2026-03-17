@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz?");
+
+html {
+    height: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 62.5%;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    background-repeat: no-repeat;
+}
+
+body {
+    height: auto;
+    min-height: 100vh;
+    background-color: #787878;
+}
+
+.login h1 a {
+    width: 100%;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODQiIGhlaWdodD0iODYiIHZpZXdCb3g9IjAgMCA4NCA4NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTc3LjE0NTggNS4yMzZWODAuODE5M0w4My4zNTQyIDgwLjk0NDNWODUuMzYxSDQ5Ljk3OTJWODAuOTQ0M0w1Ni4xNjY3IDgwLjgxOTNWNDUuNjczNUgyNy44NzVWODAuODE5M0wzNC4wNjI1IDgwLjk0NDNWODUuMzYxSDAuNjg3NVY4MC45NDQzTDYuODk1ODMgODAuODE5M1Y1LjIzNkwwLjY4NzUgNS4xMTFWMC42OTQzMzZIMzQuMDYyNVY1LjExMUwyNy44NzUgNS4yMzZWNDEuMDA2OEg1Ni4xNjY3VjUuMjM2TDQ5Ljk3OTIgNS4xMTFWMC42OTQzMzZIODMuMzU0MlY1LjExMUw3Ny4xNDU4IDUuMjM2WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==")
+}
+
+body.login div#login {
+    max-width: 480px;
+    width: 90%;
+    margin-top: -30px;
+}
+
+body.login div#login #loginform {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.25);
+}
+
+body.login div#login label {
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+body.login div#login #loginform .input {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: #ffffff none repeat 0 0;
+    border: 2px solid #69b3da;
+    border-left-width: 5px;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    color: #000000;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    font-weight: normal;
+    text-transform: none;
+}
+
+body.login div#login #loginform #wp-submit {
+    background-color: #69b3da;
+    font-size: 1.6rem;
+    line-height: 5rem;
+    padding-right: 3em;
+    padding-left: 3em;
+    color: #ffffff;
+    height: auto;
+    text-transform: uppercase;
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+body.login form .input,
+body.login form input[type="checkbox"],
+body.login input[type="text"] {
+    border: 2px solid #69b3da;
+}
+
+body.login form input[type="checkbox"] {
+    width: 1em;
+    height: 1em;
+}
+
+body.login form input[type="checkbox"]:checked::before {
+    margin-left: -0.15rem;
+}
+
+.login button.button.wp-hide-pw {
+    z-index: 1;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.login button.button.wp-hide-pw:active {
+    transform: translateY(-50%);
+}
+.login button.button.wp-hide-pw .dashicons {
+    width: 1em;
+    height: 1em;
+}
+
+body.login #backtoblog,
+body.login #nav {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+body.login div#login #nav a,
+body.login div#login #backtoblog a {
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    color: #fff;
+}
+
+.login #login_error {
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}

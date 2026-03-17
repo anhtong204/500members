@@ -1,0 +1,23 @@
+.container {
+    &-small {
+        @include make-container;
+
+        width: $small-max-width;
+        max-width: 100%;
+
+        @include media-breakpoint-down(xl) {
+            @include make-container-max-widths;
+        }
+    }
+
+    &-wide {
+        @include make-container;
+
+        width: $wide-max-width;
+        max-width: 100%;
+
+        @include media-breakpoint-down(xl) {
+            @include make-container-max-widths;
+        }
+    }
+}

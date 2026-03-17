@@ -1,0 +1,28 @@
+#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon {
+    width: 20px;
+}
+#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+    top: 4px;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 38'%3E%3Cpath fill='%23fff' d='M22.6 2.8H15.2L9 36.3c3.2 0 6.3-2.5 6.9-5.7l.1-.8.2-1.2h3c3.2 0 6.5-2.3 7-5.3l2.5-13.5c.1-.4.1-.9.1-.9.1-3.4-2.8-6.1-6.2-6.1zm-2.4 21.7s0 .2-.1.3c-.1.8-.9 1.3-1.7 1.3h-1.7l3.8-20.9h1.1c.9 0 1.7.7 1.7 1.6l-3.1 17.7z' /%3E%3C/svg%3E") !important;
+}
+
+.acf-field input[type="text"],
+.acf-field input[type="password"],
+.acf-field input[type="date"],
+.acf-field input[type="datetime"],
+.acf-field input[type="datetime-local"],
+.acf-field input[type="email"],
+.acf-field input[type="month"],
+.acf-field input[type="number"],
+.acf-field input[type="search"],
+.acf-field input[type="tel"],
+.acf-field input[type="time"],
+.acf-field input[type="url"],
+.acf-field input[type="week"],
+.acf-field textarea,
+.acf-field select {
+    padding-right: 24px;
+}
+.acf-field input[type="number"]{
+    min-width: 5em;
+}

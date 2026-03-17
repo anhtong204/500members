@@ -1,0 +1,103 @@
+:root {
+    font-size: 100%;
+
+    @include media-breakpoint-down(xl) {
+        font-size: 95%;
+    }
+
+    @include media-breakpoint-down(lg) {
+        font-size: 70%;
+    }
+
+    @include media-breakpoint-down(md) {
+        font-size: 65%;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 60%;
+    }
+
+    body {
+        @include fs-16;
+
+        font-weight: 400;
+        color: $body-color;
+
+        @include media-breakpoint-down(md) {
+            @include fs-14;
+        }
+
+        // Style for acf body in wp-admin
+        &.mce-content-body {
+            margin: 9px 10px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+a {
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.px-1x {
+    @include pt-1x;
+    @include pb-1x;
+}
+
+.px-2x {
+    @include pt-2x;
+    @include pb-2x;
+}
+
+.mt-1x {
+    @include mt-1x;
+}
+
+.mt-2x {
+    @include mt-2x;
+}
+
+.mb-1x {
+    @include mb-1x;
+}
+
+.mb-2x {
+    @include mb-2x;
+}
+
+.pt-1x {
+    @include pt-1x;
+}
+
+.pt-2x {
+    @include pt-2x;
+}
+
+.pb-1x {
+    @include pb-1x;
+}
+
+.pb-2x {
+    @include pb-2x;
+}
+
+.mx-1x {
+    @include mt-1x;
+    @include mb-1x;
+}
+
+.mx-2x {
+    @include mt-2x;
+    @include mb-2x;
+}

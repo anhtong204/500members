@@ -1,0 +1,25 @@
+@import "abstracts/variables";
+@import "vendors/bootstrap5/bootstrap";
+
+// Optional files - If you dont use the corresponding scripts/fonts comment em out
+@import "vendors/fontawesome/font-awesome";
+
+// Import Slick
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "base/fonts";
+@import "base/global";
+@import "layout/colors";
+@import "layout/slick";
+
+// Import component styles
+@import "components/slider";
+@import "components/container";
+
+// Any additional imported files //
+@import "layout/404";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/theme";

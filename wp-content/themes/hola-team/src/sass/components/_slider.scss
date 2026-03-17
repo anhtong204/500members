@@ -1,0 +1,51 @@
+.slider-item {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include rem("min-height", 700);
+
+    display: flex;
+    align-items: center;
+    outline: none;
+    user-select: auto;
+    padding-bottom: 0;
+}
+
+.slider-img {
+    @include media-breakpoint-down(md) {
+        margin-top: 80px;
+        margin-bottom: 12px;
+    }
+}
+
+.slick-dots {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    position: static;
+    width: 190px;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    li {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        height: 2px;
+
+        @include bg-opacity( $white, 0.25 );
+
+        flex-basis: 0;
+        flex-grow: 1;
+        cursor: pointer;
+
+        &.slick-active {
+            background-color: $white;
+        }
+
+        button {
+            display: none;
+        }
+    }
+}

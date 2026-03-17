@@ -1,0 +1,20 @@
+//------ SASS Useful Mixins ---------------------------------------------
+
+// by Ryan Burgess
+// https://github.com/ryanburgess/SASS-Useful-Mixins
+// MIT © Ryan Burgess
+
+// ----------------------------------------------------------------------
+
+// Background cover
+
+// ----------------------------------------------------------------------
+
+// example: @include background-cover();
+
+@mixin background-cover() {
+    background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-size: cover;
+}

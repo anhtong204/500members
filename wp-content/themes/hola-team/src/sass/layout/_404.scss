@@ -1,0 +1,65 @@
+/* 404 Page */
+.error404 {
+    background-color: transparent;
+
+    @include breakpoint(1280) {
+        height: calc(100vh - 175px);
+    }
+}
+
+.page-404 {
+    position: relative;
+    height: calc(100vh - 80px);
+    min-height: calc(100vh - 65px);
+    background: transparent;
+    text-align: center;
+
+    p,
+    h1,
+    h2,
+    a {
+        color: $color-title;
+        margin: 0 0 20px;
+        line-height: 1.4;
+    }
+
+    h2,
+    p,
+    a {
+        font-size: 24px;
+
+        @include breakpoint(650) {
+            font-size: 16px;
+        }
+    }
+
+    .center {
+        position: absolute;
+        width: 100%;
+        padding: 0 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        p {
+            margin: 0 auto;
+        }
+    }
+
+    h1 {
+        font-size: 130px;
+
+        @include breakpoint(650) {
+            font-size: 60px;
+        }
+    }
+
+    a {
+        border-bottom: 1px solid;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-hover;
+        }
+    }
+}

@@ -1,0 +1,177 @@
+@mixin fs($size, $line-height) {
+    @include rem( "font-size", $size );
+    @include rem( "line-height", $line-height );
+}
+
+@mixin h1 {
+    @include fs( 64, 80 );
+
+    @include media-breakpoint-down(md) {
+        font-size: 40px;
+        line-height: 54px;
+    }
+}
+
+@mixin h2 {
+    @include fs( 48, 60 );
+
+    @include media-breakpoint-down(md) {
+        font-size: 32px;
+        line-height: 46px;
+    }
+}
+
+@mixin h3 {
+    @include fs( 38, 56 );
+
+    @include media-breakpoint-down(md) {
+        font-size: 28px;
+        line-height: 56px;
+    }
+}
+
+@mixin h4 {
+    font-size: 36px;
+    line-height: 45px;
+
+    @include media-breakpoint-down(md) {
+        font-size: 26px;
+        line-height: 52px;
+    }
+}
+
+@mixin h5 {
+    font-size: 22px;
+    line-height: 34px;
+
+    @include media-breakpoint-down(md) {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+@mixin fs-12 {
+    font-size: 12px;
+    line-height: 24px;
+}
+
+@mixin fs-14 {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+@mixin fs-16 {
+    font-size: 16px;
+    line-height: 30px;
+
+    // @include media-breakpoint-down(md){
+    //     font-size: 14px;
+    //     line-height: 30px;
+    // }
+}
+
+@mixin fs-18 {
+    font-size: 18px;
+    line-height: 34px;
+
+    // @include media-breakpoint-down(xl){
+    //     font-size: 16px;
+    //     line-height: 34px;
+    // }
+}
+
+@mixin fs-20 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+
+    @include media-breakpoint-down(xl) {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+@mixin fs-24 {
+    font-size: 24px;
+    line-height: 40px;
+
+    @include media-breakpoint-down(xl) {
+        font-size: 18px;
+        line-height: 34px;
+    }
+}
+
+@mixin fs-25 {
+    font-size: 25px;
+    line-height: 45px;
+
+    @include media-breakpoint-down(md) {
+        font-size: 20px;
+        line-height: 42px;
+    }
+}
+
+@mixin bg-opacity($color, $opacity) {
+    background-color: $color;
+    background-color: rgba($color, $opacity);
+}
+
+@mixin mt-1x {
+    @include rem("margin-top", $spacing-1x);
+}
+
+@mixin mt-2x {
+    @include rem("margin-top", $spacing-2x);
+}
+
+@mixin mb-1x {
+    @include rem("margin-bottom", $spacing-1x);
+}
+
+@mixin mb-2x {
+    @include rem("margin-bottom", $spacing-2x);
+}
+
+@mixin pt-1x {
+    @include rem("padding-top", $spacing-1x);
+}
+
+@mixin pt-2x {
+    @include rem("padding-top", $spacing-2x);
+}
+
+@mixin pb-1x {
+    @include rem("padding-bottom", $spacing-1x);
+}
+
+@mixin pb-2x {
+    @include rem("padding-bottom", $spacing-2x);
+}
+
+@mixin mx-1x {
+    @include mt-1x;
+    @include mb-1x;
+}
+
+@mixin mx-2x {
+    @include mt-2x;
+    @include mb-2x;
+}
+
+@mixin px-1x {
+    @include pt-1x;
+    @include pb-1x;
+}
+
+@mixin px-2x {
+    @include pt-2x;
+    @include pb-2x;
+}
+
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint, $container-max-width in $max-widths {
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            max-width: $container-max-width;
+        }
+    }
+}
