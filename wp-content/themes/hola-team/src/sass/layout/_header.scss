@@ -7,3 +7,27 @@
     object-fit: contain;
   }
 }
+
+.navbar-light {
+  background: #fff;
+
+  .navbar-nav {
+    .nav-item {
+      text-transform: uppercase;
+
+      &.active {
+        .nav-link {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .nav-link {
+      color: $primary;
+
+      &:hover {
+        color: #003952;
+      }
+    }
+  }
+}

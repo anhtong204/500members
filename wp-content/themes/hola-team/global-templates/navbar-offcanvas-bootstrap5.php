@@ -47,7 +47,7 @@ $container = get_theme_mod( 'holateam_container_type' );
 		<div class="offcanvas offcanvas-end bg-light" tabindex="-1" id="navbarNavOffcanvas">
 
 			<div class="offcanvas-header justify-content-end">
-				<button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				<button type="button" class="btn-close btn-close-dark text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			</div><!-- .offcancas-header -->
 
 			<!-- The WordPress Menu goes here -->
