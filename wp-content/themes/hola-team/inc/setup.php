@@ -36,10 +36,11 @@ if ( ! function_exists( 'holateam_setup' ) ) {
 		 */
 		add_theme_support( 'title-tag' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in one or more locations.
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Menu', 'holateam' ),
+				'footer'  => __( 'Footer Menu', 'holateam' ),
 			)
 		);
 
