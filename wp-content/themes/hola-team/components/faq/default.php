@@ -12,14 +12,21 @@
                     <?php get_component_title( $component_h1, $component_title, $component_sub_title ); ?>
                 </div>
 
+                <?php if ( $body ) : ?>
+                    <div class="faq-body">
+                        <?php echo apply_filters( 'the_content', $body ); ?>
+                    </div>
+                <?php endif; ?>
+
 				<div class="faq-list">
 					<?php foreach ( $row['faq_items'] as $index => $faq_item ) : ?>
 						<?php
 						$question = isset( $faq_item['question'] ) ? $faq_item['question'] : '';
 						$answer   = isset( $faq_item['answer'] ) ? $faq_item['answer'] : '';
+						$open     = 0 === $index;
 						$answer_id = 'faq-answer-' . $layout_position . '-' . $index;
 						?>
-						<div class="faq-item">
+						<div class="faq-item<?php echo $open ? ' open' : ''; ?>">
 							<button class="faq-question" type="button" aria-expanded="<?php echo $open ? 'true' : 'false'; ?>" aria-controls="<?php echo esc_attr( $answer_id ); ?>">
 								<span class="faq-question-text"><?php echo esc_html( $question ); ?></span>
 								<span class="faq-icon" aria-hidden="true"></span>
@@ -31,6 +38,13 @@
 						</div>
 					<?php endforeach; ?>
 				</div>
+
+                <?php if ( $component_link ) : ?>
+                    <div class="faq-action">
+                        <?php render_link( $component_link, 'btn-holateam' ); ?>
+                    </div>
+                <?php endif; ?>
+
 			</div>
 
 			<?php if ( $faq_image_url ) : ?>
@@ -41,3 +55,8 @@
 		</div>
 	<?php endif; ?>
 </div>
+
+<?php
+	$layout = null;
+	$component_name = null;
+?>
