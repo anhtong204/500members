@@ -23,16 +23,15 @@
 						<?php
 						$question = isset( $faq_item['question'] ) ? $faq_item['question'] : '';
 						$answer   = isset( $faq_item['answer'] ) ? $faq_item['answer'] : '';
-						$open     = 0 === $index;
 						$answer_id = 'faq-answer-' . $layout_position . '-' . $index;
 						?>
-						<div class="faq-item<?php echo $open ? ' open' : ''; ?>">
-							<button class="faq-question" type="button" aria-expanded="<?php echo $open ? 'true' : 'false'; ?>" aria-controls="<?php echo esc_attr( $answer_id ); ?>">
+						<div class="faq-item">
+							<button class="faq-question" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr( $answer_id ); ?>">
 								<span class="faq-question-text"><?php echo esc_html( $question ); ?></span>
 								<span class="faq-icon" aria-hidden="true"></span>
 							</button>
 
-							<div id="<?php echo esc_attr( $answer_id ); ?>" class="faq-answer" role="region" aria-hidden="<?php echo $open ? 'false' : 'true'; ?>">
+							<div id="<?php echo esc_attr( $answer_id ); ?>" class="faq-answer" role="region" aria-hidden="true">
 								<?php echo apply_filters( 'the_content', $answer ); ?>
 							</div>
 						</div>
