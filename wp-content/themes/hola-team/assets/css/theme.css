@@ -15969,12 +15969,6 @@ a {
   color: #004c6c;
 }
 @media only screen and (min-width: 767px) {
-  .component-faq .container {
-    max-width: 1035px;
-    margin: 0 auto;
-  }
-}
-@media only screen and (min-width: 767px) {
   .component-faq .row {
     flex-flow: nowrap;
     --bs-gutter-x: 8%;
@@ -16062,6 +16056,96 @@ a {
   object-fit: cover;
 }
 
+.component-steps .steps-grid {
+  margin: 0 -1rem;
+  justify-content: center;
+}
+.component-steps .steps-grid > .col-12 {
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+}
+@media only screen and (max-width: 767px) {
+  .component-steps .steps-grid > .col-12 {
+    margin-bottom: 5rem;
+  }
+}
+.component-steps .steps-card {
+  height: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+}
+@media only screen and (min-width: 768px) {
+  .component-steps .steps-card {
+    padding: 2.5rem 2rem;
+  }
+}
+.component-steps .steps-card .steps-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: -70px;
+}
+.component-steps .steps-card .steps-number {
+  width: 90px;
+  height: 90px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #004c6c;
+  color: #fff;
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 1;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  font-family: "Bitter", serif;
+}
+.component-steps .steps-card .steps-icon {
+  width: 4.2rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.component-steps .steps-card .steps-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.component-steps .steps-card .steps-title {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #004c6c;
+  font-family: "Inter", sans-serif;
+}
+.component-steps .steps-card .steps-description {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+  font-size: 14px;
+}
+.component-steps .steps-button-wrapper {
+  text-align: right;
+}
+@media only screen and (max-width: 767px) {
+  .component-steps .steps-button-wrapper {
+    text-align: center;
+    margin-top: -2rem;
+  }
+}
+
 .container-small {
   width: 100%;
   padding-right: var(--bs-gutter-x, 12px);
@@ -16139,6 +16223,12 @@ a {
   .container-wide {
     max-width: 1571px;
   }
+}
+
+.btn {
+  border-radius: 30px;
+  padding: 10px 40px;
+  font-weight: 500;
 }
 
 /* 404 Page */

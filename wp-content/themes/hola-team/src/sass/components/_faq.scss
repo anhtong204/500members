@@ -1,13 +1,6 @@
 .component-faq {
   color: $primary;
 
-  .container {
-    @include min-breakpoint(767) {
-      max-width: 1035px;
-      margin: 0 auto;
-    }
-  }
-
   .row {
     @include min-breakpoint(767) {
       flex-flow: nowrap;

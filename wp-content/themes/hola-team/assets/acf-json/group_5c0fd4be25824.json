@@ -108,6 +108,37 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6b7a8c9d0e1f0": {
+                    "key": "layout_6b7a8c9d0e1f0",
+                    "name": "steps",
+                    "label": "Steps",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6b7a8c9d0e1f4",
+                            "label": "Steps",
+                            "name": "steps",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6b7a8c9d0e1f2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Component",
