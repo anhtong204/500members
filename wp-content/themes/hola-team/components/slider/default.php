@@ -43,7 +43,7 @@
 										<div class="description"><?php echo $slide_description; ?></div>
 										<?php endif; ?>
 
-										<?php render_link( $button, 'btn-holateam bg-gray' ); ?>
+										<?php render_link( $button, 'btn btn-primary' ); ?>
 
 										<?php if ( $settings['dots'] ) : ?>
 										<div class="holateam-dots"></div>

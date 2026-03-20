@@ -40,7 +40,7 @@
 
                 <?php if ( $component_link ) : ?>
                     <div class="faq-action">
-                        <?php render_link( $component_link, 'btn-holateam' ); ?>
+                        <?php render_link( $component_link, 'btn btn-primary' ); ?>
                     </div>
                 <?php endif; ?>
 

@@ -7,5 +7,5 @@
 		</div>
 	<?php endif; ?>    
 
-	<?php render_link( $component_link, 'btn-holateam' ); ?>
+	<?php render_link( $component_link, 'btn' ); ?>
 </div>

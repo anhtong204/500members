@@ -15603,6 +15603,12 @@ h5,
 h6,
 .h6 {
   font-family: Bitter, serif;
+  font-weight: 600;
+}
+
+h1, .h1 {
+  font-size: 48px;
+  line-height: 60px;
 }
 
 img {
@@ -16055,6 +16061,9 @@ a {
   -o-object-fit: cover;
   object-fit: cover;
 }
+.component-faq .faq-action {
+  margin-top: 20px;
+}
 
 .component-steps .steps-grid {
   margin: 0 -1rem;
@@ -16229,6 +16238,10 @@ a {
   border-radius: 30px;
   padding: 10px 40px;
   font-weight: 500;
+}
+.btn-primary:hover {
+  background-color: #3ca1af;
+  border-color: #3ca1af;
 }
 
 /* 404 Page */
