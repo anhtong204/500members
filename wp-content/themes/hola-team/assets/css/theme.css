@@ -16092,7 +16092,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 30px;
   margin-top: -70px;
 }
 .component-steps .steps-card .steps-number {
@@ -16124,7 +16124,7 @@ a {
   object-fit: contain;
 }
 .component-steps .steps-card .steps-title {
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
   font-weight: 600;
   font-size: 1.1rem;
   color: #004c6c;
