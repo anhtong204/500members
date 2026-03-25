@@ -16232,6 +16232,47 @@ a {
   margin-top: 35px;
 }
 
+/* stylelint-disable */
+@media only screen and (max-width: 767px) {
+  .component-image_text .image-text-row .image-text-image {
+    margin-bottom: 30px;
+  }
+}
+.component-image_text .image-text-row .image-text-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.component-image_text .image-text-row .image-text-content .content-wrapper {
+  margin-left: auto;
+}
+@media only screen and (min-width: 768px) {
+  .component-image_text .image-text-row .image-text-content .content-wrapper {
+    max-width: 85%;
+  }
+}
+.component-image_text .image-text-row .image-text-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+.component-image_text .image-text-row.image-text-reverse .content-wrapper {
+  margin-left: 0;
+}
+.component-image_text .list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.component-image_text .list li {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #73CCD8;
+}
+.component-image_text .list li:not(:last-child) {
+  margin-bottom: 12px;
+}
+
 .container-small {
   width: 100%;
   padding-right: var(--bs-gutter-x, 12px);

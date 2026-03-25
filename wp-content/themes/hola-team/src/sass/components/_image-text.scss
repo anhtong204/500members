@@ -1,0 +1,55 @@
+/* stylelint-disable */
+.component-image_text {
+  .image-text-row {
+    // gap: 2rem;
+
+    .image-text-image {
+      @include breakpoint(767) {
+        margin-bottom: 30px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 30px;
+        object-fit: cover;
+      }
+    }
+
+    .image-text-content {
+      .content-wrapper {
+        margin-left: auto;
+
+        @include min-breakpoint(768) {
+          max-width: 85%;
+        }
+      }
+
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.7;
+      }
+    }
+
+    &.image-text-reverse {
+      .content-wrapper {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+      padding-bottom: 12px;
+      border-bottom: 1px solid #73CCD8;
+
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

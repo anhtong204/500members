@@ -176,6 +176,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_8a7d9b0f3c20": {
+                    "key": "layout_8a7d9b0f3c20",
+                    "name": "image_text",
+                    "label": "Image + Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_8a7d9b0f3c21",
+                            "label": "Image + Text",
+                            "name": "image_text",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_8a7d9b0f3c19"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Component",

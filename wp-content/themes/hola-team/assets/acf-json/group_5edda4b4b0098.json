@@ -6,6 +6,7 @@
             "key": "field_5edda4b4b8f86",
             "label": "Title",
             "name": "component_title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -25,6 +26,7 @@
             "key": "field_5f02a8f6de9bb",
             "label": "Title color",
             "name": "component_title_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -36,12 +38,16 @@
             },
             "default_value": "",
             "enable_opacity": false,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_608a668562742",
             "label": "Subtitle",
             "name": "component_sub_title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -61,6 +67,7 @@
             "key": "field_608a668862743",
             "label": "Subtitle color",
             "name": "component_sub_title_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -72,12 +79,16 @@
             },
             "default_value": "",
             "enable_opacity": false,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_5f90ee5c7e622",
             "label": "Style for Title",
             "name": "style_for_title",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -99,12 +110,15 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_5fec4f02bc335",
             "label": "Content for H1",
             "name": "component_h1",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -123,12 +137,15 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_5edda4b4ba663",
             "label": "Body",
             "name": "component_body",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -148,6 +165,7 @@
             "key": "field_5edda4b4ba27e",
             "label": "Link",
             "name": "component_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -163,6 +181,7 @@
             "key": "field_6098a9a5ed1b3",
             "label": "Style Link",
             "name": "style_link",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -173,18 +192,19 @@
                 "id": ""
             },
             "choices": {
-                "default": "Default",
-                "secondary": "Secondary",
-                "gray": "Gray",
-                "small": "Small"
+                "primary": "Primary",
+                "secondary": "Secondary"
             },
-            "default_value": "default",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
+            "default_value": "primary",
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         }
     ],
     "location": [
@@ -205,5 +225,6 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654589979
+    "display_title": "",
+    "modified": 1774310335
 }
