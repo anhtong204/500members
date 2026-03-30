@@ -1,0 +1,212 @@
+{
+    "key": "group_0a1b2c3d4e5f8",
+    "title": "Component - Comparison Table",
+    "fields": [
+        {
+            "key": "field_0a1b2c3d4e5f9",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_0a1b2c3d4e5fa",
+            "label": "Label Left",
+            "name": "label_left",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Enter the left column label (e.g. 500 Members)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "500 Members",
+            "placeholder": ""
+        },
+        {
+            "key": "field_0a1b2c3d4e5fb",
+            "label": "Label Right",
+            "name": "label_right",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Enter the right column label (e.g. Competitor)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Other",
+            "placeholder": ""
+        },
+        {
+            "key": "field_0a1b2c3d4e5fc",
+            "label": "Rows",
+            "name": "rows",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "List of comparison rows.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_0a1b2c3d4e5fd",
+                    "label": "Description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Feature description",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_0a1b2c3d4e5fi",
+                    "label": "Description Info",
+                    "name": "description_info",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Tooltip text displayed next to the description.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_0a1b2c3d4e5fe",
+                    "label": "Has 500 Members",
+                    "name": "has_internal",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Yes",
+                    "default_value": 1,
+                    "ui": 0
+                },
+                {
+                    "key": "field_0a1b2c3d4e5ff",
+                    "label": "Has Competitor",
+                    "name": "has_competitor",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Yes",
+                    "default_value": 0,
+                    "ui": 0
+                }
+            ]
+        },
+        {
+            "key": "field_0a1b2c3d4e5fg",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_0a1b2c3d4e5fh",
+            "label": "General Info",
+            "name": "general_info",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_58a7f7c5e16c1"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Comparison table based on the 500 Members design.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1775000001
+}

@@ -208,6 +208,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_0a1b2c3d4e5f6": {
+                    "key": "layout_0a1b2c3d4e5f6",
+                    "name": "comparison_table",
+                    "label": "Comparison Table",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_0a1b2c3d4e5f7",
+                            "label": "Comparison Table",
+                            "name": "comparison_table",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_0a1b2c3d4e5f8"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Component",
