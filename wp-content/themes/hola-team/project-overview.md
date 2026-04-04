@@ -211,7 +211,7 @@ Trong group_5c0fd4be25824, thêm layout:
 2. **Xuất JSON** để version control
 3. **Tạo template** trong `components/`
 4. **Test trên page** với flexible content
-5. **Style với SCSS** trong `src/`
+5. **Style với SCSS** trong `src/sass/`, sau đó build ra `assets/css/`
 6. **Build assets** với npm/yarn
 
 ## Lưu Ý Quan Trọng

@@ -240,6 +240,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_61d9d8f1b2a34": {
+                    "key": "layout_61d9d8f1b2a34",
+                    "name": "training",
+                    "label": "Training",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61d9d8f1b2a36",
+                            "label": "Training",
+                            "name": "training",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_61d9d8f1b2a34"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Component",

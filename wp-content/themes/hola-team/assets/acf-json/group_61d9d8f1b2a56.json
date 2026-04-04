@@ -1,0 +1,83 @@
+{
+    "key": "group_61d9d8f1b2a56",
+    "title": "Training Fields",
+    "fields": [
+        {
+            "key": "field_61d9d8f1b2a57",
+            "label": "Training",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_61d9d8f1b2a58",
+            "label": "Duration",
+            "name": "training_duration",
+            "type": "text",
+            "instructions": "Thời lượng của khóa học, ví dụ 50 minutes hoặc 1 hour.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61d9d8f1b2a59",
+            "label": "Media Type",
+            "name": "training_media_type",
+            "type": "radio",
+            "instructions": "Chọn loại video để sử dụng cho khóa học.",
+            "required": 0,
+            "choices": {
+                "youtube": "YouTube",
+                "vimeo": "Vimeo",
+                "html5": "HTML5"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "layout": "horizontal",
+            "default_value": "youtube"
+        },
+        {
+            "key": "field_61d9d8f1b2a5a",
+            "label": "Media Link",
+            "name": "training_media_link",
+            "type": "url",
+            "instructions": "URL video YouTube/Vimeo hoặc URL tệp HTML5.",
+            "required": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https://"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "training"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Training CPT fields for duration and video link.",
+    "show_in_rest": 0
+}

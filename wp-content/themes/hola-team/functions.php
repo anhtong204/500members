@@ -17,6 +17,7 @@ $holateam_includes = array(
 	'/advanced-theme-settings.php',         // Advanced theme settings.
 	'/theme-settings.php',                  // Initialize theme default settings.
 	'/setup.php',                           // Theme setup and custom theme supports.
+	'/post-types.php',                      // Register custom post types.
 	'/widgets.php',                         // Register widget area.
 	'/enqueue.php',                         // Enqueue scripts and styles.
 	'/template-tags.php',                   // Custom template tags for this theme.
