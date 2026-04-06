@@ -16568,6 +16568,217 @@ a {
   font-weight: 500;
 }
 
+/* stylelint-disable */
+.component-benefits_earnings .benefits-earnings-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+@media only screen and (max-width: 992px) {
+  .component-benefits_earnings .benefits-earnings-inner {
+    grid-template-columns: 1fr;
+  }
+}
+.component-benefits_earnings .benefits-list-title {
+  margin-bottom: 20px;
+  color: #003952;
+  font-weight: 500;
+}
+.component-benefits_earnings .benefits-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+.component-benefits_earnings .benefits-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.component-benefits_earnings .benefits-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: #FBF8F4;
+  color: #004c6c;
+  box-shadow: 2px 2px 4px 0px #EDEAE3;
+}
+.component-benefits_earnings .benefits-item-title {
+  margin: 0 0 0.35rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: #21799E;
+  font-family: "Inter", sans-serif;
+}
+.component-benefits_earnings .benefits-item-text {
+  margin: 0;
+  font-size: 16px;
+}
+.component-benefits_earnings .benefits-earnings-card-column {
+  display: flex;
+  align-items: center;
+}
+.component-benefits_earnings .benefits-earnings-card {
+  width: 100%;
+  background: #003F5A;
+  border-radius: 2rem;
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+.component-benefits_earnings .earnings-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+.component-benefits_earnings .earnings-card-title {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+  color: #fff;
+}
+.component-benefits_earnings .earnings-card-select {
+  width: 100%;
+  position: relative;
+}
+.component-benefits_earnings .earnings-card-select svg {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #003F5A;
+}
+.component-benefits_earnings .earnings-card-select select {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid #339CC8;
+  background: #fff;
+  color: #004c6c;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.component-benefits_earnings .earnings-card-body {
+  display: grid;
+  gap: 1.75rem;
+}
+.component-benefits_earnings .earnings-card-control {
+  display: grid;
+  gap: 1rem;
+}
+.component-benefits_earnings .earnings-card-label {
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+}
+.component-benefits_earnings .earnings-range-wrap {
+  display: grid;
+  gap: 1rem;
+}
+.component-benefits_earnings .benefits-range-input {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 12px;
+  border-radius: 9px;
+  background: rgba(238, 238, 238, 0.6980392157);
+  outline: none;
+}
+.component-benefits_earnings .benefits-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #F70056;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  border: 1px solid #fff;
+}
+.component-benefits_earnings .benefits-range-input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #F70056;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.component-benefits_earnings .earnings-range-scale {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  color: #fff;
+}
+.component-benefits_earnings .earnings-range-scale span {
+  text-align: center;
+}
+.component-benefits_earnings .earnings-value-row {
+  display: flex;
+  align-items: baseline;
+  letter-spacing: 4%;
+  justify-content: center;
+}
+.component-benefits_earnings .earnings-value-amount {
+  font-size: 32px;
+  font-weight: 700;
+  color: #72EEFF;
+  line-height: 1;
+  font-family: "Bitter", serif;
+}
+.component-benefits_earnings .earnings-value-interval {
+  color: #72EEFF;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Bitter", serif;
+}
+.component-benefits_earnings .earnings-card-actions {
+  display: flex;
+  justify-content: center;
+}
+.component-benefits_earnings .earnings-card-button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.component-benefits_earnings .earnings-card-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+}
+.component-benefits_earnings .earnings-note-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 10px;
+  cursor: help;
+}
+@media only screen and (max-width: 768px) {
+  .component-benefits_earnings .benefits-earnings-inner {
+    grid-template-columns: 1fr;
+  }
+  .component-benefits_earnings .benefits-earnings-card {
+    padding: 1.75rem;
+  }
+}
+
 .container-small {
   width: 100%;
   padding-right: var(--bs-gutter-x, 12px);
@@ -16655,6 +16866,15 @@ a {
 .btn-primary:hover {
   background-color: #3ca1af;
   border-color: #3ca1af;
+}
+.btn-tertiary {
+  background-color: #fff;
+  border: 1px solid #004c6c;
+  color: #004c6c;
+}
+.btn-tertiary:hover {
+  background-color: #004c6c;
+  color: #fff;
 }
 
 /* 404 Page */

@@ -9,4 +9,15 @@
       border-color: #3ca1af;
     }
   }
+
+  &-tertiary {
+    background-color: #fff;
+    border: 1px solid $primary;
+    color: $primary;
+
+    &:hover {
+      background-color: $primary;
+      color: #fff;
+    }
+  }
 }

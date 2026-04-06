@@ -1,0 +1,240 @@
+/* stylelint-disable */
+.component-benefits_earnings {
+  .benefits-earnings-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+
+    @include breakpoint(992) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .benefits-list-title {
+    margin-bottom: 20px;
+    color: #003952;
+    font-weight: 500;
+  }
+
+  // .benefits-earnings-list {
+  //   display: grid;
+  //   gap: 20px;
+  // }
+
+  .benefits-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .benefits-item-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background: #FBF8F4;
+    color: $primary;
+    box-shadow: 2px 2px 4px 0px #EDEAE3;
+  }
+
+  .benefits-item-title {
+    margin: 0 0 0.35rem;
+    font-size: 16px;
+    font-weight: 400;
+    color: #21799E;
+    font-family: $font-body;
+  }
+
+  .benefits-item-text {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .benefits-earnings-card-column {
+    display: flex;
+    align-items: center;
+  }
+
+  .benefits-earnings-card {
+    width: 100%;
+    background: #003F5A;
+    border-radius: 2rem;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: 0 24px 60px rgb(0 0 0 / 18%);
+  }
+
+  .earnings-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .earnings-card-title {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .earnings-card-select {
+    width: 100%;
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #003F5A;
+    }
+  }
+
+  .earnings-card-select select {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #339CC8;
+    background: #fff;
+    color: $primary;
+    outline: none;
+    appearance: none;
+  }
+
+  .earnings-card-body {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .earnings-card-control {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .earnings-card-label {
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .earnings-range-wrap {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .benefits-range-input {
+    width: 100%;
+    appearance: none;
+    height: 12px;
+    border-radius: 9px;
+    background: #EEEEEEB2;
+    outline: none;
+  }
+
+  .benefits-range-input::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #F70056;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 18%);
+    cursor: pointer;
+    border: 1px solid #fff;
+  }
+
+  .benefits-range-input::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #F70056;
+    border: 1px solid #fff;
+    cursor: pointer;
+  }
+
+  .earnings-range-scale {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    color: #fff;
+  }
+
+  .earnings-range-scale span {
+    text-align: center;
+  }
+
+  .earnings-value-row {
+    display: flex;
+    align-items: baseline;
+    letter-spacing: 4%;
+    justify-content: center;
+  }
+
+  .earnings-value-amount {
+    font-size: 32px;
+    font-weight: 700;
+    color: #72EEFF;
+    line-height: 1;
+    font-family: $font-title;
+  }
+
+  .earnings-value-interval {
+    color: #72EEFF;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: $font-title;
+  }
+
+  .earnings-card-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .earnings-card-button {
+    width: fit-content;
+  }
+
+  .earnings-card-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #fff;
+  }
+
+  .earnings-note-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 10px;
+    cursor: help;
+  }
+
+  @include breakpoint(768) {
+    .benefits-earnings-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits-earnings-card {
+      padding: 1.75rem;
+    }
+  }
+}

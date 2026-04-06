@@ -1,0 +1,344 @@
+{
+    "key": "group_9b7c6d5e4f3a2",
+    "title": "Component - Benefits Earnings",
+    "fields": [
+        {
+            "key": "field_9b7c6d5e4f3a3",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_69d2d56453ddd",
+            "label": "Benefits Title",
+            "name": "benefits_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_9b7c6d5e4f3a4",
+            "label": "Benefits list",
+            "name": "benefits_list",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add benefit items to show in the left column.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_9b7c6d5e4f3a6",
+            "button_label": "Add Benefit",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_69d20e24e9a0e",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_9b7c6d5e4f3a4"
+                },
+                {
+                    "key": "field_9b7c6d5e4f3a5",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Benefit title.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_9b7c6d5e4f3a4"
+                },
+                {
+                    "key": "field_9b7c6d5e4f3a6",
+                    "label": "Description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Benefit description.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": "br",
+                    "placeholder": "",
+                    "parent_repeater": "field_9b7c6d5e4f3a4"
+                }
+            ]
+        },
+        {
+            "key": "field_9b7c6d5e4f3a9",
+            "label": "Earnings title",
+            "name": "earnings_card_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Title shown on the earnings card.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Estimated earnings",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_9b7c6d5e4f3aa",
+            "label": "Members label",
+            "name": "earnings_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Label shown above the members slider.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Members",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_9b7c6d5e4f3ab",
+            "label": "Default earnings value",
+            "name": "earnings_value",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Default earnings number shown on the card.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 52000,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 0,
+            "max": 9999999,
+            "step": 1000
+        },
+        {
+            "key": "field_9b7c6d5e4f3ac",
+            "label": "Interval text",
+            "name": "earnings_interval",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Text shown after the earnings amount.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "year",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_9b7c6d5e4f3ad",
+            "label": "Earnings note",
+            "name": "earnings_note",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Support text shown under the button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "How we estimate your earnings",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69d2f6c3eb594",
+            "label": "Button",
+            "name": "component_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_9b7c6d5e4f3ae",
+            "label": "Default slider value",
+            "name": "earnings_members",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Default slider members value.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 300,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 100,
+            "max": 500,
+            "step": 100
+        },
+        {
+            "key": "field_9b7c6d5e4f3af",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_9b7c6d5e4f3b0",
+            "label": "General Info",
+            "name": "general_info",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_58a7f7c5e16c1"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "Benefits + estimated earnings component.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1775433481
+}

@@ -204,7 +204,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "Comparison table based on the 500 Members design.",
     "show_in_rest": 0,
     "display_title": "",

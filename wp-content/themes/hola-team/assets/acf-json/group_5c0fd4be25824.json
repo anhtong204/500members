@@ -272,6 +272,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_9b7c6d5e4f3a1": {
+                    "key": "layout_9b7c6d5e4f3a1",
+                    "name": "benefits_earnings",
+                    "label": "Benefits & Earnings",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_9b7c6d5e4f3b1",
+                            "label": "Benefits & Earnings",
+                            "name": "benefits_earnings",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_9b7c6d5e4f3a2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Component",
