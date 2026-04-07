@@ -1,0 +1,350 @@
+.survey-component-wrapper {
+  margin-top: 40px;
+  position: relative;
+  font-family: inherit;
+  text-align: center;
+
+  .survey-title {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .survey-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .survey-btn-choice {
+      padding: 20px;
+      align-self: center;
+    }
+  }
+
+  .survey-step-1 {
+    text-align: center;
+    padding: 3rem 1rem;
+
+    .survey-title {
+      color: #043a50;
+      font-size: 32px;
+      margin-bottom: 2rem;
+    }
+
+    .survey-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 500px;
+      margin: 0 auto;
+
+      .survey-btn-choice {
+        color: #043a50;
+        border: 2px solid #043a50;
+        background: transparent;
+        border-radius: 50px;
+        padding: 1.25rem;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          background: #043a50;
+          color: #fff;
+        }
+
+        strong {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  // Modal
+  .survey-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(245 245 245 / 95%);
+    z-index: 1050;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    &.show {
+      display: flex;
+    }
+
+    .survey-modal-dialog {
+      width: 100%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgb(0 0 0 / 8%);
+      padding: 3rem 2.5rem;
+      position: relative;
+      margin: 1rem;
+    }
+
+    .survey-modal-body {
+      .survey-step-content {
+        text-align: center;
+
+        // Form Elements
+        .survey-form-group {
+          position: relative;
+          margin-bottom: 1.25rem;
+
+          span {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            color: #043a50;
+            font-size: 16px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            background-color: #fff;
+            transform: translateY(-50%);
+          }
+
+          .survey-input,
+          .survey-select,
+          .survey-textarea {
+            width: 100%;
+            border: 1px solid #1988b4;
+            border-radius: 30px;
+            padding: 7px 20px;
+            color: #043a50;
+            font-size: 16px;
+            outline: none;
+            background: #fff;
+
+            &::placeholder {
+              color: #043a50;
+            }
+
+            &:focus {
+              & ~ span {
+                top: -15px;
+                left: 21px;
+                font-size: 10px;
+                transform: none;
+                padding: 0 2px;
+              }
+            }
+
+            &:invalid:not(:placeholder-shown) {
+              border-color: #e74c3c;
+            }
+          }
+
+          select.survey-select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23043d56"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 20px;
+            cursor: pointer;
+          }
+
+          .survey-textarea {
+            border-radius: 20px; // Less rounded for textarea
+            resize: vertical;
+          }
+
+          &.has-input {
+            .survey-input,
+            .survey-select,
+            .survey-textarea {
+              & ~ span {
+                top: -15px;
+                left: 21px;
+                font-size: 10px;
+                transform: none;
+                padding: 0 2px;
+              }
+            }
+          }
+        }
+
+        .survey-btn-next {
+          width: 100%;
+          background: #043d56;
+          color: #fff;
+          border-radius: 30px;
+          padding: 6px 10px;
+          border: none;
+          font-size: 18px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+
+          &:hover {
+            background: #022a3b;
+          }
+        }
+
+        // Checkbox Group
+        .survey-checkbox-group {
+          text-align: left;
+          margin-bottom: 20px;
+
+          .survey-checkbox-label {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            color: $primary;
+            user-select: none;
+
+            input {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+            }
+
+            .survey-checkbox-custom {
+              position: absolute;
+              top: 15px;
+              left: 0;
+              height: 19px;
+              width: 19px;
+              background-color: transparent;
+              border: 1px solid #1988b4;
+              border-radius: 4px;
+
+              &::after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 6px;
+                top: 2px;
+                width: 5px;
+                height: 10px;
+                border: solid #043a50;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+              }
+            }
+
+            input:checked ~ .survey-checkbox-custom::after {
+              display: block;
+            }
+          }
+        }
+
+        // Columns for form inputs
+        .survey-form-row {
+          display: flex;
+          gap: 1rem;
+
+          .survey-col-half {
+            flex: 1;
+            margin-bottom: 1.25rem;
+          }
+        }
+
+        // Specific to Question 7
+        .survey-question-text {
+          color: $primary;
+          font-size: 16px;
+          margin-bottom: 1.25rem;
+          text-align: left;
+          font-weight: 400;
+          font-family: $font-body;
+        }
+
+        .survey-note {
+          color: #043a50;
+          font-size: 14px;
+          text-align: center;
+          margin-bottom: 1.5rem;
+          line-height: 1.4;
+        }
+
+        // Success step specifically
+        &#survey-step-success {
+          padding: 2rem 0;
+
+          .survey-success-icon {
+            margin-bottom: 25px;
+            display: inline-block;
+          }
+
+          .survey-success-title {
+            color: $primary;
+            font-size: 45px;
+            line-height: 1;
+            font-weight: 500;
+            margin-bottom: 10px;
+          }
+
+          .survey-success-text {
+            color: $primary;
+            margin: 0;
+            font-family: $font-body;
+          }
+        }
+
+        // Get in touch specifically
+        &#survey-step-get-in-touch {
+          padding: 1rem 0;
+
+          .get-in-touch-icon-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+
+            .avatar-m {
+              position: absolute;
+              top: -10px;
+              left: -15px;
+              background: #f05a30;
+              color: #fff;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              border: 3px solid #333; // dark border for pin
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: bold;
+              font-size: 16px;
+              z-index: 2;
+              box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
+            }
+
+            .user-icon-badge {
+              background: #6dcbd3;
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+
+          .get-in-touch-text {
+            color: #043a50;
+            font-size: 18px;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            padding: 0 1rem;
+          }
+
+          .get-in-touch-phone {
+            color: #043a50;
+            font-size: 26px;
+            font-weight: 600;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

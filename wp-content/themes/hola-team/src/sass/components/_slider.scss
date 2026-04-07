@@ -1,3 +1,19 @@
+.component-slider {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 340px center;
+
+  .wrap-info {
+    max-width: 600px;
+    color: $primary;
+
+    .slider-title {
+      font-weight: initial;
+      text-align: center;
+    }
+  }
+}
+
 .slider-item {
   background-repeat: no-repeat;
   background-position: center;

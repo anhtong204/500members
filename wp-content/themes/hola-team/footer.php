@@ -74,6 +74,8 @@ $container = get_theme_mod('holateam_container_type');
 
 <?php wp_footer(); ?>
 
+<?php include( locate_template( "components/survey/modal.php" ) );     ?>
+
 </body>
 
 </html>

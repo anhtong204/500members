@@ -484,6 +484,82 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_6623a1b2c3d4e",
+            "label": "Survey Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6623a1b2c3d5f",
+            "label": "Survey Recipient Email",
+            "name": "survey_recipient_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "Enter the email address that will receive survey submissions. Leave blank to use the site admin email.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "e.g. info@example.com",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6623a1b2c3d6a",
+            "label": "reCAPTCHA v3 Site Key",
+            "name": "recaptcha_site_key",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Enter your Google reCAPTCHA v3 site key. Get one at https://www.google.com/recaptcha/admin",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6623a1b2c3d7b",
+            "label": "reCAPTCHA v3 Secret Key",
+            "name": "recaptcha_secret_key",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Enter your Google reCAPTCHA v3 secret key. Keep this private.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -504,5 +580,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652337557
+    "modified": 1774534192
 }

@@ -20,4 +20,15 @@
       color: #fff;
     }
   }
+
+  &-transparent {
+    background-color: transparent;
+    border: 1px solid $primary;
+    color: $primary;
+
+    &:hover {
+      background-color: #fff;
+      color: $primary;
+    }
+  }
 }
