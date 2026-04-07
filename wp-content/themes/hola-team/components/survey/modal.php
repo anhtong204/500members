@@ -1,3 +1,22 @@
+<?php
+$states_query = new WP_Query(array(
+    'post_type'      => 'state',
+    'posts_per_page' => -1,
+    'post_status'    => 'publish',
+    'orderby'        => 'title',
+    'order'          => 'ASC',
+));
+$state_options = '';
+if ( $states_query->have_posts() ) {
+    while ( $states_query->have_posts() ) {
+        $states_query->the_post();
+        // Use post title as both value and label. If the CMS stores state abbreviations in the slug, you could use $post->post_name.
+        $state_title = get_the_title();
+        $state_options .= '<option value="' . esc_attr( $state_title ) . '">' . esc_html( $state_title ) . '</option>';
+    }
+    wp_reset_postdata();
+}
+?>
 <div class="survey-component-wrapper mt-0">
     <!-- The rest of the survey is shown as a popup modal -->
     <div class="survey-modal" id="survey-modal">
@@ -38,10 +57,7 @@
                         <div class="survey-form-group">
                             <select name="state_licensed" class="survey-select" required>
                                 <option value="" disabled selected>State licensed</option>
-                                <option value="AL">Alabama</option>
-                                <option value="CA">California</option>
-                                <option value="NY">New York</option>
-                                <option value="TX">Texas</option>
+                                <?php echo $state_options; ?>
                             </select>
                         </div>
                         <button type="button" class="survey-btn-next" data-next="survey-step-6">Next</button>
@@ -120,10 +136,7 @@
                             <div class="survey-form-group survey-col-half">
                                 <select name="address_state" class="survey-select" required>
                                     <option value="" disabled selected>State</option>
-                                    <option value="AL">Alabama</option>
-                                    <option value="CA">California</option>
-                                    <option value="NY">New York</option>
-                                    <option value="TX">Texas</option>
+                                    <?php echo $state_options; ?>
                                 </select>
                             </div>
                             <div class="survey-form-group survey-col-half">
