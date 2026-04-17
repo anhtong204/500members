@@ -3,13 +3,21 @@
     const $section = block.hasClass('component-training') ? block : block.find('.component-training');
     const $buttons = $section.find('.training-filter');
     const $items = $section.find('.training-item');
+    const $searchInput = $section.find('.training-search-input');
 
-    const filterItems = function( category ) {
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    const applyFilters = function() {
       $items.each(function() {
         const $item = $(this);
         const itemCategories = $item.data('category') ? String($item.data('category')).split(' ') : [];
-        const show = category === 'all' || itemCategories.indexOf(category) !== -1;
-        $item.toggle(show);
+        const matchesCategory = activeCategory === 'all' || itemCategories.indexOf(activeCategory) !== -1;
+
+        const itemTitle = $item.find('.training-card-title').text().toLowerCase();
+        const matchesSearch = searchQuery === '' || itemTitle.indexOf(searchQuery) !== -1;
+
+        $item.toggle(matchesCategory && matchesSearch);
       });
     };
 
@@ -17,7 +25,13 @@
       const $button = $(this);
       $buttons.removeClass('active');
       $button.addClass('active');
-      filterItems($button.data('category'));
+      activeCategory = $button.data('category');
+      applyFilters();
+    });
+
+    $searchInput.on('input', function() {
+      searchQuery = $(this).val().toLowerCase().trim();
+      applyFilters();
     });
   };
 

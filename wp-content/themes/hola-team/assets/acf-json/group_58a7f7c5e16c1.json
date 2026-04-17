@@ -6,6 +6,7 @@
             "key": "field_5db7e8bd18a41",
             "label": "Container",
             "name": "container",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -16,6 +17,7 @@
                 "id": ""
             },
             "choices": {
+                "container-small-xs": "Container Very Small",
                 "container-small": "Container small",
                 "container": "Container",
                 "container-wide": "Container wide",
@@ -23,17 +25,21 @@
                 "no-padding": "Full width (No padding)"
             },
             "default_value": "container",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_58a854d766cc6",
             "label": "Component ID",
             "name": "component_id",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -53,6 +59,7 @@
             "key": "field_5ed5beb23af48",
             "label": "Component Height",
             "name": "component_height",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -73,12 +80,15 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_5ed5bf063af49",
             "label": "Custom Height (px)",
             "name": "custom_height",
+            "aria-label": "",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -108,6 +118,7 @@
             "key": "field_58b2bdc9f9ccf",
             "label": "Text color",
             "name": "component_text_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -119,12 +130,16 @@
             },
             "default_value": "",
             "enable_opacity": false,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_58b811d7cbd51",
             "label": "Text align",
             "name": "component_text_align",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -148,12 +163,15 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_5ea7b2016a90e",
             "label": "Margin",
             "name": "component_margin",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -175,12 +193,15 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_5ed4c4251d658",
             "label": "Padding",
             "name": "component_padding",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -205,12 +226,15 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_58a7fb865bb5e",
             "label": "Background color",
             "name": "component_background_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -222,12 +246,16 @@
             },
             "default_value": "",
             "enable_opacity": false,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_58a7fb495bb5d",
             "label": "Background Image",
             "name": "component_background_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -267,5 +295,6 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654505880
+    "display_title": "",
+    "modified": 1775896902
 }

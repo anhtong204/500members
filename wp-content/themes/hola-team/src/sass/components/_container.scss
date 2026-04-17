@@ -1,4 +1,15 @@
 .container {
+  &-small-xs {
+    @include make-container;
+
+    width: 950px;
+    max-width: 100%;
+
+    @include media-breakpoint-down(xl) {
+      @include make-container-max-widths;
+    }
+  }
+
   &-small {
     @include make-container;
 

@@ -9368,6 +9368,109 @@
 	  });
 	})(jQuery);
 
+	const initializeFaq = function (block) {
+	  // `block` is expected to be the root .component-faq element.
+	  // If it's a wrapper, locate the inner component.
+	  const $faq = block.hasClass('component-faq') ? block : block.find('.component-faq');
+	  $faq.find('.faq-question').on('click', function () {
+	    const $button = jQuery(this);
+	    const $item = $button.closest('.faq-item');
+	    const isOpen = $item.hasClass('open'); // Close all other items
+
+	    $item.siblings('.faq-item').removeClass('open').find('.faq-question').attr('aria-expanded', 'false');
+	    $item.siblings('.faq-item').find('.faq-answer').attr('aria-hidden', 'true'); // Toggle current
+
+	    if (isOpen) {
+	      $item.removeClass('open');
+	      $button.attr('aria-expanded', 'false');
+	      $item.find('.faq-answer').attr('aria-hidden', 'true');
+	    } else {
+	      $item.addClass('open');
+	      $button.attr('aria-expanded', 'true');
+	      $item.find('.faq-answer').attr('aria-hidden', 'false');
+	    }
+	  });
+	};
+
+	jQuery(document).ready(function ($) {
+	  $('.component-faq').each(function () {
+	    initializeFaq($(this));
+	  });
+	});
+
+	jQuery(document).ready(function ($) {
+	  if ($('#join-newsletter-form').length === 0) {
+	    return;
+	  }
+
+	  $('#join-newsletter-form').on('submit', function (e) {
+	    e.preventDefault();
+	    var $form = $(this);
+	    var $submitBtn = $('#join-submit-btn');
+	    var $btnText = $submitBtn.find('.btn-text');
+	    var $spinner = $submitBtn.find('.spinner-border');
+	    var $message = $('#join-newsletter-message');
+	    var email = $('#join-email').val();
+
+	    if (!email) {
+	      return;
+	    } // loading state
+
+
+	    $submitBtn.prop('disabled', true);
+	    $btnText.addClass('d-none');
+	    $spinner.removeClass('d-none');
+	    $message.hide().removeClass('text-success text-danger').text('');
+
+	    if (typeof grecaptcha !== 'undefined' && holaTeamJoinAjax.recaptchaSiteKey) {
+	      grecaptcha.ready(function () {
+	        grecaptcha.execute(holaTeamJoinAjax.recaptchaSiteKey, {
+	          action: 'submit'
+	        }).then(function (token) {
+	          $('#join_recaptcha_token').val(token);
+	          submitJoinForm($form, $submitBtn, $btnText, $spinner, $message);
+	        });
+	      });
+	    } else {
+	      submitJoinForm($form, $submitBtn, $btnText, $spinner, $message);
+	    }
+	  });
+
+	  function submitJoinForm($form, $submitBtn, $btnText, $spinner, $message) {
+	    var formData = $form.serializeArray();
+	    formData.push({
+	      name: 'action',
+	      value: 'submit_join'
+	    });
+	    $.ajax({
+	      url: holaTeamJoinAjax.url,
+	      type: 'POST',
+	      data: $.param(formData),
+	      success: function (response) {
+	        $submitBtn.prop('disabled', false);
+	        $spinner.addClass('d-none');
+	        $btnText.removeClass('d-none');
+
+	        if (response.success) {
+	          $form[0].reset();
+	          $message.addClass('text-success').text(response.data).fadeIn();
+	          setTimeout(function () {
+	            $message.fadeOut();
+	          }, 5000);
+	        } else {
+	          $message.addClass('text-danger').text(response.data).fadeIn();
+	        }
+	      },
+	      error: function () {
+	        $submitBtn.prop('disabled', false);
+	        $spinner.addClass('d-none');
+	        $btnText.removeClass('d-none');
+	        $message.addClass('text-danger').text('An error occurred. Please try again.').fadeIn();
+	      }
+	    });
+	  }
+	});
+
 	var slick_min = {exports: {}};
 
 	(function (module, exports) {
@@ -9399,98 +9502,6 @@
 	    initializeBlock($(this));
 	  });
 	});
-
-	const initializeFaq = function (block) {
-	  // `block` is expected to be the root .component-faq element.
-	  // If it's a wrapper, locate the inner component.
-	  const $faq = block.hasClass('component-faq') ? block : block.find('.component-faq');
-	  $faq.find('.faq-question').on('click', function () {
-	    const $button = jQuery(this);
-	    const $item = $button.closest('.faq-item');
-	    const isOpen = $item.hasClass('open'); // Close all other items
-
-	    $item.siblings('.faq-item').removeClass('open').find('.faq-question').attr('aria-expanded', 'false');
-	    $item.siblings('.faq-item').find('.faq-answer').attr('aria-hidden', 'true'); // Toggle current
-
-	    if (isOpen) {
-	      $item.removeClass('open');
-	      $button.attr('aria-expanded', 'false');
-	      $item.find('.faq-answer').attr('aria-hidden', 'true');
-	    } else {
-	      $item.addClass('open');
-	      $button.attr('aria-expanded', 'true');
-	      $item.find('.faq-answer').attr('aria-hidden', 'false');
-	    }
-	  });
-	};
-
-	jQuery(document).ready(function ($) {
-	  $('.component-faq').each(function () {
-	    initializeFaq($(this));
-	  });
-	});
-
-	const initializeTestimonials = function (block) {
-	  const settings = block.data('settings') || {};
-	  const defaults = {
-	    dots: false,
-	    arrows: false,
-	    infinite: true,
-	    speed: 600,
-	    slidesToShow: 3,
-	    slidesToScroll: 3,
-	    responsive: [{
-	      breakpoint: 992,
-	      settings: {
-	        slidesToShow: 2,
-	        slidesToScroll: 2
-	      }
-	    }, {
-	      breakpoint: 768,
-	      settings: {
-	        slidesToShow: 1,
-	        slidesToScroll: 1
-	      }
-	    }]
-	  };
-	  block.slick(jQuery.extend(true, {}, defaults, settings));
-	};
-
-	jQuery(document).ready(function ($) {
-	  $('.holateam-testimonials').each(function () {
-	    initializeTestimonials($(this));
-	  });
-	});
-
-	(function ($) {
-	  const initializeTraining = function (block) {
-	    const $section = block.hasClass('component-training') ? block : block.find('.component-training');
-	    const $buttons = $section.find('.training-filter');
-	    const $items = $section.find('.training-item');
-
-	    const filterItems = function (category) {
-	      $items.each(function () {
-	        const $item = $(this);
-	        const itemCategories = $item.data('category') ? String($item.data('category')).split(' ') : [];
-	        const show = category === 'all' || itemCategories.indexOf(category) !== -1;
-	        $item.toggle(show);
-	      });
-	    };
-
-	    $buttons.on('click', function () {
-	      const $button = $(this);
-	      $buttons.removeClass('active');
-	      $button.addClass('active');
-	      filterItems($button.data('category'));
-	    });
-	  };
-
-	  $(document).ready(function () {
-	    $('.component-training').each(function () {
-	      initializeTraining($(this));
-	    });
-	  });
-	})(jQuery);
 
 	/* eslint-disable */
 	(function ($) {
@@ -9633,6 +9644,78 @@
 	      if (e.key === 'Escape' && $('#survey-modal').hasClass('show')) {
 	        $('#survey-modal').removeClass('show');
 	      }
+	    });
+	  });
+	})(jQuery);
+
+	const initializeTestimonials = function (block) {
+	  const settings = block.data('settings') || {};
+	  const defaults = {
+	    dots: false,
+	    arrows: false,
+	    infinite: true,
+	    speed: 600,
+	    slidesToShow: 3,
+	    slidesToScroll: 3,
+	    responsive: [{
+	      breakpoint: 992,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 2
+	      }
+	    }, {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }]
+	  };
+	  block.slick(jQuery.extend(true, {}, defaults, settings));
+	};
+
+	jQuery(document).ready(function ($) {
+	  $('.holateam-testimonials').each(function () {
+	    initializeTestimonials($(this));
+	  });
+	});
+
+	(function ($) {
+	  const initializeTraining = function (block) {
+	    const $section = block.hasClass('component-training') ? block : block.find('.component-training');
+	    const $buttons = $section.find('.training-filter');
+	    const $items = $section.find('.training-item');
+	    const $searchInput = $section.find('.training-search-input');
+	    let activeCategory = 'all';
+	    let searchQuery = '';
+
+	    const applyFilters = function () {
+	      $items.each(function () {
+	        const $item = $(this);
+	        const itemCategories = $item.data('category') ? String($item.data('category')).split(' ') : [];
+	        const matchesCategory = activeCategory === 'all' || itemCategories.indexOf(activeCategory) !== -1;
+	        const itemTitle = $item.find('.training-card-title').text().toLowerCase();
+	        const matchesSearch = searchQuery === '' || itemTitle.indexOf(searchQuery) !== -1;
+	        $item.toggle(matchesCategory && matchesSearch);
+	      });
+	    };
+
+	    $buttons.on('click', function () {
+	      const $button = $(this);
+	      $buttons.removeClass('active');
+	      $button.addClass('active');
+	      activeCategory = $button.data('category');
+	      applyFilters();
+	    });
+	    $searchInput.on('input', function () {
+	      searchQuery = $(this).val().toLowerCase().trim();
+	      applyFilters();
+	    });
+	  };
+
+	  $(document).ready(function () {
+	    $('.component-training').each(function () {
+	      initializeTraining($(this));
 	    });
 	  });
 	})(jQuery);

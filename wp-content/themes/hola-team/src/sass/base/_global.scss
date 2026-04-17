@@ -44,7 +44,7 @@ h4,
 h5,
 h6 {
   font-family: Bitter, serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h1 {
@@ -116,4 +116,48 @@ a {
 .mx-2x {
   @include mt-2x;
   @include mb-2x;
+}
+
+/* stylelint-disable */
+.container-component-page {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 400;
+  }
+
+  section {
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .component-title {
+    line-height: 57px;
+  }
+
+  .content-wrapper {
+    padding: 0 12px 15px;
+
+    @include min-breakpoint(768) {
+      padding: 10px 0 10px 55px;
+      max-width: 100% !important;
+    }
+  }
+
+  .block-content {
+    max-width: 705px;
+    margin: 0 auto;
+  }
+
+  .survey-component-wrapper {
+    margin-top: 0;
+  }
 }

@@ -304,11 +304,43 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_69db5588efb98": {
+                    "key": "layout_69db5588efb98",
+                    "name": "shortcode",
+                    "label": "Shortcode",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_69db5588efb9a",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_69db554e61c89"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
-            "button_label": "Add Component",
             "min": "",
-            "max": ""
+            "max": "",
+            "button_label": "Add Component"
         }
     ],
     "location": [
@@ -330,5 +362,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774040611
+    "modified": 1775981983
 }

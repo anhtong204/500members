@@ -6,15 +6,34 @@
             "key": "field_61d9d8f1b2a35",
             "label": "Training",
             "name": "",
+            "aria-label": "",
             "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_61d9d8f1b2a36",
             "label": "Layout",
             "name": "component_layout",
+            "aria-label": "",
             "type": "select",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "default": "Default"
             },
@@ -24,33 +43,105 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69d4c4d0694a4",
+            "label": "Title Search",
+            "name": "title_search",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69d4c10beb399",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69d4c4de694a5",
+            "label": "Description Search",
+            "name": "description_search",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69d4c10beb399",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "very_simple",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_61d9d8f1b2a37",
             "label": "Items per row",
             "name": "items_per_page",
+            "aria-label": "",
             "type": "number",
             "instructions": "Số lượng training được hiển thị.",
             "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "25",
                 "class": "",
                 "id": ""
             },
             "default_value": 8,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "min": 1,
-            "max": 50,
-            "step": 1
+            "max": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "step": 1,
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_61d9d8f1b2a3a",
             "label": "Text Content",
             "name": "text_content",
+            "aria-label": "",
             "type": "clone",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "clone": [
                 "group_5edda4b4b0098"
             ],
@@ -63,15 +154,55 @@
             "key": "field_61d9d8f1b2a38",
             "label": "Settings",
             "name": "",
+            "aria-label": "",
             "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_69d4c10beb399",
+            "label": "Show Search Form",
+            "name": "show_search_form",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_61d9d8f1b2a39",
             "label": "General Info",
             "name": "general_info",
+            "aria-label": "",
             "type": "clone",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "clone": [
                 "group_58a7f7c5e16c1"
             ],
@@ -98,5 +229,7 @@
     "hide_on_screen": "",
     "active": false,
     "description": "Fields for the Training component layout.",
-    "show_in_rest": 0
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1775551735
 }

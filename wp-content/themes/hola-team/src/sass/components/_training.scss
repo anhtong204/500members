@@ -20,9 +20,9 @@
 
 .training-filter:hover,
 .training-filter.active {
-  background: $primary;
-  color: #fff;
-  border-color: $primary;
+  background: transparent;
+  // color: #fff;
+  border-color: #339cc8;
 }
 
 .training-list {
@@ -132,8 +132,71 @@
   margin-bottom: 35px;
 }
 
+.training-search {
+  position: relative;
+  max-width: 500px;
+  margin: 25px auto 0;
+}
+
+.training-search-input {
+  width: 100%;
+  padding: 5px 50px 5px 24px;
+  border: none;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 14px;
+  color: $primary;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 6%);
+  outline: none;
+  transition: box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: #90a4ae;
+    font-weight: 400;
+  }
+
+  &:focus {
+    box-shadow: 0 2px 20px rgb(0 0 0 / 10%);
+  }
+}
+
+.training-search-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
 .component-training {
   .component-title {
     font-weight: 500;
+  }
+}
+
+.training-search-section {
+  background-color: #fbf8f4;
+  padding: 35px 0 40px;
+
+  .training-header {
+    margin-bottom: 40px;
+  }
+
+  .training-title-search {
+    font-weight: 500;
+    color: $primary;
+  }
+
+  .training-description-search {
+    font-weight: 600;
+    color: $primary;
   }
 }
