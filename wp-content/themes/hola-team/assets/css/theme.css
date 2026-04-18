@@ -16547,6 +16547,8 @@ a {
 }
 
 .training-card-image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   min-height: 200px;
   background-size: cover;
   background-position: center;
@@ -16565,13 +16567,15 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: end;
   padding: 5px;
-  border-radius: 999px;
+  border-radius: 16px;
   background: #f8f4ee;
   color: #003952;
   font-size: 10px;
+  line-height: 1;
   font-weight: 400;
-  gap: 3px;
+  gap: 5px;
   margin-top: auto;
 }
 
@@ -16614,7 +16618,9 @@ a {
 }
 
 .training-header {
-  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
   margin-bottom: 35px;
 }
 
@@ -16670,6 +16676,15 @@ a {
 
 .component-training .component-title {
   font-weight: 500;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.component-training .component-sub-title {
+  font-size: 25px;
+}
+.component-training .btn {
+  margin-left: auto;
+  padding: 8px 60px;
 }
 
 .training-search-section {

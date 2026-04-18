@@ -15,7 +15,7 @@
             "label": "Duration",
             "name": "training_duration",
             "type": "text",
-            "instructions": "Thời lượng của khóa học, ví dụ 50 minutes hoặc 1 hour.",
+            "instructions": "The duration of the training, e.g. 50:00 or 1:00:00.",
             "required": 0,
             "wrapper": {
                 "width": "50",
@@ -33,7 +33,7 @@
             "label": "Media Type",
             "name": "training_media_type",
             "type": "radio",
-            "instructions": "Chọn loại video để sử dụng cho khóa học.",
+            "instructions": "Select the video type to use for the training.",
             "required": 0,
             "choices": {
                 "youtube": "YouTube",
@@ -51,7 +51,7 @@
             "label": "Media Link",
             "name": "training_media_link",
             "type": "url",
-            "instructions": "URL video YouTube/Vimeo hoặc URL tệp HTML5.",
+            "instructions": "YouTube/Vimeo video URL or HTML5 file URL.",
             "required": 0,
             "wrapper": {
                 "width": "100",

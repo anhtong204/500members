@@ -15,52 +15,12 @@ $training_query = new WP_Query(
 );
 ?>
 
-<?php if ($row['show_search_form']): ?>
-	<div class="training-search-section">
-		<div class="container-small">
-			<div class="training-header">
-				<?php if ($row['title_search']): ?>
-					<h2 class="training-title-search">
-						<?php echo $row['title_search']; ?>
-					</h2>
-				<?php endif; ?>
-
-				<?php if ($row['description_search']): ?>
-					<div class="training-description-search">
-						<?php echo $row['description_search']; ?>
-					</div>
-				<?php endif; ?>
-			</div>
-			<div class="training-search">
-				<input type="text" class="training-search-input" placeholder="<?php esc_attr_e('Search', 'holateam'); ?>"
-					aria-label="<?php esc_attr_e('Search training modules', 'holateam'); ?>">
-				<button type="button" class="training-search-btn" aria-label="<?php esc_attr_e('Search', 'holateam'); ?>">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<circle cx="11" cy="11" r="8" />
-						<line x1="21" y1="21" x2="16.65" y2="16.65" />
-					</svg>
-				</button>
-			</div>
-		</div>
-	</div>
-<?php endif; ?>
-
 <div class="<?php echo esc_attr($container_class); ?> training-component">
 	<div class="training-header">
-		<?php get_component_title($component_h1, $component_title, $component_sub_title); ?>
-	</div>
+		<?php get_component_title($component_h1, $component_title, $component_sub_title, true); ?>
 
-	<?php if (!empty($training_terms) && !is_wp_error($training_terms)): ?>
-		<div class="training-filters">
-			<button type="button" class="training-filter active"
-				data-category="all"><?php esc_html_e('All modules', 'holateam'); ?></button>
-			<?php foreach ($training_terms as $term): ?>
-				<button type="button" class="training-filter"
-					data-category="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></button>
-			<?php endforeach; ?>
-		</div>
-	<?php endif; ?>
+		<?php render_link($component_link, 'btn btn-primary'); ?>
+	</div>
 
 	<?php if ($training_query->have_posts()): ?>
 		<div class="training-list">
@@ -96,13 +56,16 @@ $training_query = new WP_Query(
 							<h3 class="training-card-title">
 								<a href="<?php echo esc_url($card_link); ?>"><?php the_title(); ?></a>
 							</h3>
-							<?php if ($primary_term): ?>
+							<?php if ($training_duration): ?>
 								<div class="training-card-category">
-									<?php echo esc_html($primary_term); ?>
-									<span class="training-card-separator">|</span>
-									<?php if ($training_duration): ?>
-										<div class="training-card-duration"><?php echo esc_html($training_duration); ?></div>
-									<?php endif; ?>
+									<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M7 13.5C10.5899 13.5 13.5 10.5899 13.5 7C13.5 3.41015 10.5899 0.5 7 0.5C3.41015 0.5 0.5 3.41015 0.5 7C0.5 10.5899 3.41015 13.5 7 13.5Z"
+											stroke="#003F5A" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M6.27777 4.11111V7.72223H9.88888" stroke="#003F5A" stroke-linecap="round"
+											stroke-linejoin="round" />
+									</svg>
+									<div class="training-card-duration"><?php echo esc_html($training_duration); ?></div>
 								</div>
 							<?php endif; ?>
 						</div>
