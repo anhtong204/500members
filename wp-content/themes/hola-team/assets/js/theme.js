@@ -9323,6 +9323,37 @@
 	  }
 	})();
 
+	const initializeFaq = function (block) {
+	  // `block` is expected to be the root .component-faq element.
+	  // If it's a wrapper, locate the inner component.
+	  const $faq = block.hasClass('component-faq') ? block : block.find('.component-faq');
+	  $faq.find('.faq-question').on('click', function () {
+	    const $button = jQuery(this);
+	    const $item = $button.closest('.faq-item');
+	    const isOpen = $item.hasClass('open'); // Close all other items
+
+	    $item.siblings('.faq-item').removeClass('open').find('.faq-question').attr('aria-expanded', 'false');
+	    $item.siblings('.faq-item').find('.faq-answer').attr('aria-hidden', 'true'); // Toggle current
+
+	    if (isOpen) {
+	      $item.removeClass('open');
+	      $button.attr('aria-expanded', 'false');
+	      $item.find('.faq-answer').attr('aria-hidden', 'true');
+	    } else {
+	      $item.addClass('open');
+	      $button.attr('aria-expanded', 'true');
+	      $item.find('.faq-answer').attr('aria-hidden', 'false');
+	    }
+	  });
+	};
+
+	jQuery(document).ready(function ($) {
+	  $('.component-faq').each(function () {
+	    initializeFaq($(this));
+	  });
+	});
+
+	/* global holaTeamJoinAjax, grecaptcha */
 	jQuery(document).ready(function ($) {
 	  if ($('#join-newsletter-form').length === 0) {
 	    return;
@@ -9396,81 +9427,6 @@
 	  }
 	});
 
-	(function ($) {
-	  const initializeBenefitsEarnings = function (block) {
-	    const $section = block.hasClass('component-benefits_earnings') ? block : block.find('.component-benefits_earnings');
-	    const $slider = $section.find('.benefits-range-input');
-	    const $stateSelect = $section.find('.earnings-card-select select');
-	    const $amount = $section.find('.earnings-value-amount');
-
-	    if (!$slider.length || !$amount.length || !$stateSelect.length) {
-	      return;
-	    }
-
-	    parseInt($slider.attr('min') || 100, 10);
-	    parseInt($slider.attr('max') || 500, 10);
-
-	    const formatCurrency = function (value) {
-	      return '$' + value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-	    };
-
-	    const getSelectedRate = function () {
-	      const rate = parseFloat($stateSelect.find(':selected').data('rate'));
-	      return isNaN(rate) ? 2891.66 : rate;
-	    };
-
-	    const updateValue = function (value) {
-	      const rate = getSelectedRate();
-	      const amount = rate * (value / 100);
-	      $amount.text(formatCurrency(amount));
-	    };
-
-	    $slider.on('input change', function () {
-	      updateValue(parseInt($(this).val(), 10));
-	    });
-	    $stateSelect.on('change', function () {
-	      updateValue(parseInt($slider.val(), 10));
-	    });
-	    updateValue(parseInt($slider.val(), 10));
-	  };
-
-	  $(document).ready(function () {
-	    $('.component-benefits_earnings').each(function () {
-	      initializeBenefitsEarnings($(this));
-	    });
-	  });
-	})(jQuery);
-
-	const initializeFaq = function (block) {
-	  // `block` is expected to be the root .component-faq element.
-	  // If it's a wrapper, locate the inner component.
-	  const $faq = block.hasClass('component-faq') ? block : block.find('.component-faq');
-	  $faq.find('.faq-question').on('click', function () {
-	    const $button = jQuery(this);
-	    const $item = $button.closest('.faq-item');
-	    const isOpen = $item.hasClass('open'); // Close all other items
-
-	    $item.siblings('.faq-item').removeClass('open').find('.faq-question').attr('aria-expanded', 'false');
-	    $item.siblings('.faq-item').find('.faq-answer').attr('aria-hidden', 'true'); // Toggle current
-
-	    if (isOpen) {
-	      $item.removeClass('open');
-	      $button.attr('aria-expanded', 'false');
-	      $item.find('.faq-answer').attr('aria-hidden', 'true');
-	    } else {
-	      $item.addClass('open');
-	      $button.attr('aria-expanded', 'true');
-	      $item.find('.faq-answer').attr('aria-hidden', 'false');
-	    }
-	  });
-	};
-
-	jQuery(document).ready(function ($) {
-	  $('.component-faq').each(function () {
-	    initializeFaq($(this));
-	  });
-	});
-
 	var slick_min = {exports: {}};
 
 	(function (module, exports) {
@@ -9500,6 +9456,38 @@
 	jQuery(document).ready(function ($) {
 	  $('.component-slider').each(function () {
 	    initializeBlock($(this));
+	  });
+	});
+
+	const initializeTestimonials = function (block) {
+	  const settings = block.data('settings') || {};
+	  const defaults = {
+	    dots: false,
+	    arrows: false,
+	    infinite: true,
+	    speed: 600,
+	    slidesToShow: 3,
+	    slidesToScroll: 3,
+	    responsive: [{
+	      breakpoint: 992,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 2
+	      }
+	    }, {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }]
+	  };
+	  block.slick(jQuery.extend(true, {}, defaults, settings));
+	};
+
+	jQuery(document).ready(function ($) {
+	  $('.holateam-testimonials').each(function () {
+	    initializeTestimonials($(this));
 	  });
 	});
 
@@ -9823,6 +9811,51 @@
 	  });
 	})(jQuery);
 
+	(function ($) {
+	  const initializeBenefitsEarnings = function (block) {
+	    const $section = block.hasClass('component-benefits_earnings') ? block : block.find('.component-benefits_earnings');
+	    const $slider = $section.find('.benefits-range-input');
+	    const $stateSelect = $section.find('.earnings-card-select select');
+	    const $amount = $section.find('.earnings-value-amount');
+
+	    if (!$slider.length || !$amount.length || !$stateSelect.length) {
+	      return;
+	    }
+
+	    parseInt($slider.attr('min') || 100, 10);
+	    parseInt($slider.attr('max') || 500, 10);
+
+	    const formatCurrency = function (value) {
+	      return '$' + value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	    };
+
+	    const getSelectedRate = function () {
+	      const rate = parseFloat($stateSelect.find(':selected').data('rate'));
+	      return isNaN(rate) ? 2891.66 : rate;
+	    };
+
+	    const updateValue = function (value) {
+	      const rate = getSelectedRate();
+	      const amount = rate * (value / 100);
+	      $amount.text(formatCurrency(amount));
+	    };
+
+	    $slider.on('input change', function () {
+	      updateValue(parseInt($(this).val(), 10));
+	    });
+	    $stateSelect.on('change', function () {
+	      updateValue(parseInt($slider.val(), 10));
+	    });
+	    updateValue(parseInt($slider.val(), 10));
+	  };
+
+	  $(document).ready(function () {
+	    $('.component-benefits_earnings').each(function () {
+	      initializeBenefitsEarnings($(this));
+	    });
+	  });
+	})(jQuery);
+
 	/* eslint-disable */
 	(function ($) {
 	  $(document).ready(function () {
@@ -9967,38 +10000,6 @@
 	    });
 	  });
 	})(jQuery);
-
-	const initializeTestimonials = function (block) {
-	  const settings = block.data('settings') || {};
-	  const defaults = {
-	    dots: false,
-	    arrows: false,
-	    infinite: true,
-	    speed: 600,
-	    slidesToShow: 3,
-	    slidesToScroll: 3,
-	    responsive: [{
-	      breakpoint: 992,
-	      settings: {
-	        slidesToShow: 2,
-	        slidesToScroll: 2
-	      }
-	    }, {
-	      breakpoint: 768,
-	      settings: {
-	        slidesToShow: 1,
-	        slidesToScroll: 1
-	      }
-	    }]
-	  };
-	  block.slick(jQuery.extend(true, {}, defaults, settings));
-	};
-
-	jQuery(document).ready(function ($) {
-	  $('.holateam-testimonials').each(function () {
-	    initializeTestimonials($(this));
-	  });
-	});
 
 	exports.Alert = alert$1;
 	exports.Button = button;

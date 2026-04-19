@@ -1,3 +1,4 @@
+/* global holaTeamJoinAjax, grecaptcha */
 jQuery(document).ready(function ($) {
   if ($('#join-newsletter-form').length === 0) {
     return;
