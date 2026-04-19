@@ -1,18 +1,18 @@
 <?php
 $states_query = new WP_Query(array(
-    'post_type'      => 'state',
+    'post_type' => 'state',
     'posts_per_page' => -1,
-    'post_status'    => 'publish',
-    'orderby'        => 'title',
-    'order'          => 'ASC',
+    'post_status' => 'publish',
+    'orderby' => 'title',
+    'order' => 'ASC',
 ));
 $state_options = '';
-if ( $states_query->have_posts() ) {
-    while ( $states_query->have_posts() ) {
+if ($states_query->have_posts()) {
+    while ($states_query->have_posts()) {
         $states_query->the_post();
         // Use post title as both value and label. If the CMS stores state abbreviations in the slug, you could use $post->post_name.
         $state_title = get_the_title();
-        $state_options .= '<option value="' . esc_attr( $state_title ) . '">' . esc_html( $state_title ) . '</option>';
+        $state_options .= '<option value="' . esc_attr($state_title) . '">' . esc_html($state_title) . '</option>';
     }
     wp_reset_postdata();
 }
@@ -24,20 +24,24 @@ if ( $states_query->have_posts() ) {
             <div class="survey-modal-content">
                 <form id="survey-form" class="survey-modal-body">
                     <input type="hidden" name="action" value="submit_survey">
-                    
+
                     <!-- Step: get in touch -->
                     <div class="survey-step-content" id="survey-step-get-in-touch" style="display: none;">
                         <div class="get-in-touch-icon-wrap">
                             <div class="user-icon-badge">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="4" y="2" width="16" height="20" rx="3" ry="3"></rect>
                                     <path d="M8 18c0-3 2-4 4-4s4 1 4 4"></path>
                                     <circle cx="12" cy="9" r="2"></circle>
                                 </svg>
                             </div>
                         </div>
-                        <p class="get-in-touch-text">Please get in touch once you are licensed. If you need guidance on getting licensed, call us at</p>
-                        <h3 class="get-in-touch-phone">808-652-5210</h3>
+                        <p class="get-in-touch-text">Please get in touch once you are licensed. If you need guidance on
+                            getting licensed, call us at</p>
+                        <h3 class="get-in-touch-phone">
+                            <a href="tel:+18086525210">808-652-5210</a>
+                        </h3>
                     </div>
 
                     <!-- Step: Question 4 -->
@@ -86,7 +90,8 @@ if ( $states_query->have_posts() ) {
                         <div class="survey-form-group">
                             <textarea name="carriers" class="survey-textarea" rows="5"></textarea>
                         </div>
-                        <p class="survey-note">Will be assigned based on your address if left blank.<br>Can be changed/added later.</p>
+                        <p class="survey-note">Will be assigned based on your address if left blank.<br>Can be
+                            changed/added later.</p>
                         <button type="button" class="survey-btn-next" data-next="survey-step-8">Next</button>
                     </div>
 
@@ -144,15 +149,18 @@ if ( $states_query->have_posts() ) {
                                 <span>Zip Code</span>
                             </div>
                         </div>
-                        <button type="submit" class="survey-btn-next survey-btn-submit" data-next="submit">Submit</button>
+                        <button type="submit" class="survey-btn-next survey-btn-submit"
+                            data-next="submit">Submit</button>
                     </div>
 
                     <!-- Step: Success -->
                     <div class="survey-step-content" id="survey-step-success" style="display: none;">
                         <div class="survey-success-icon">
-                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="40" cy="40" r="40" fill="#75C9CE"/>
-                                <path d="M26.6667 42.6667L34.6667 50.6667L53.3333 29.3333" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="40" fill="#75C9CE" />
+                                <path d="M26.6667 42.6667L34.6667 50.6667L53.3333 29.3333" stroke="white"
+                                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
                         <h2 class="survey-success-title">Thank you!</h2>

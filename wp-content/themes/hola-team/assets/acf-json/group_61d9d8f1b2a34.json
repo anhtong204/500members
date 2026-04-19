@@ -21,7 +21,7 @@
             "selected": 0
         },
         {
-            "key": "field_61d9d8f1b2a36",
+            "key": "field_62d9e8f1b2a36",
             "label": "Layout",
             "name": "component_layout",
             "aria-label": "",
@@ -35,7 +35,8 @@
                 "id": ""
             },
             "choices": {
-                "default": "Default"
+                "default": "Default",
+                "listing": "Listing"
             },
             "default_value": "default",
             "allow_null": 0,
@@ -53,7 +54,7 @@
             "name": "items_per_page",
             "aria-label": "",
             "type": "number",
-            "instructions": "Số lượng training được hiển thị.",
+            "instructions": "The number of trainings to display.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
