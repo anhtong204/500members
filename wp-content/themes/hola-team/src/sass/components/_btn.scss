@@ -3,6 +3,12 @@
   padding: 10px 40px;
   font-weight: 500;
 
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: none !important;
+  }
+
   &-primary {
     &:hover {
       background-color: #3ca1af;

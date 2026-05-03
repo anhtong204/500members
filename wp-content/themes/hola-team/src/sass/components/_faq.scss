@@ -1,6 +1,10 @@
 .component-faq {
   color: $primary;
 
+  .faq-header {
+    margin-bottom: 25px;
+  }
+
   .row {
     @include min-breakpoint(767) {
       flex-flow: nowrap;
@@ -19,6 +23,10 @@
 
     .faq-item {
       border-bottom: 1px solid #73ccd8;
+
+      &:first-child {
+        border-top: 1px solid #73ccd8;
+      }
 
       &.open {
         .faq-question {
@@ -48,7 +56,7 @@
         background: transparent;
         border: none;
         padding: 1.25rem 0;
-        font-weight: 600;
+        // font-weight: 400;
         font-size: 1rem;
         cursor: pointer;
         text-align: left;

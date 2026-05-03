@@ -1,15 +1,21 @@
 .component-slider {
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 340px center;
+  background-size: contain;
+  background-position: center right;
+
+  @include breakpoint(1199) {
+    background-size: cover;
+    background-position: inherit;
+  }
 
   .wrap-info {
     max-width: 600px;
     color: $primary;
 
     .slider-title {
-      font-weight: initial;
+      font-weight: 400;
       text-align: center;
+      font-size: 45px;
     }
   }
 }
@@ -19,10 +25,9 @@
   background-position: center;
   background-size: cover;
 
-  @include rem("min-height", 700);
+  @include rem("min-height", 545);
 
   display: flex;
-  align-items: center;
   outline: none;
   user-select: auto;
   padding-bottom: 0;
@@ -50,7 +55,7 @@
     padding: 0;
     height: 2px;
 
-    @include bg-opacity( $white, 0.25 );
+    @include bg-opacity($white, 0.25);
 
     flex-basis: 0;
     flex-grow: 1;

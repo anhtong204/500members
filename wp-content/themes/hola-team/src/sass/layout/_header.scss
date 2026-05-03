@@ -1,6 +1,10 @@
 .navbar-brand {
   height: 80px;
 
+  @include min-breakpoint(768) {
+    margin-left: 1rem;
+  }
+
   img {
     height: 100%;
     width: 100%;

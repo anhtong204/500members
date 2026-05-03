@@ -18,8 +18,6 @@ $training_query = new WP_Query(
 <div class="<?php echo esc_attr($container_class); ?> training-component">
 	<div class="training-header">
 		<?php get_component_title($component_h1, $component_title, $component_sub_title, true); ?>
-
-		<?php render_link($component_link, 'btn btn-primary'); ?>
 	</div>
 
 	<?php if ($training_query->have_posts()): ?>
@@ -33,4 +31,8 @@ $training_query = new WP_Query(
 	<?php else: ?>
 		<p><?php esc_html_e('No training items found.', 'holateam'); ?></p>
 	<?php endif; ?>
+
+	<div class="training-footer">
+		<?php render_link($component_link, 'btn btn-primary'); ?>
+	</div>
 </div>
