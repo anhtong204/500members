@@ -225,7 +225,7 @@
             "label": "Earnings note",
             "name": "earnings_note",
             "aria-label": "",
-            "type": "text",
+            "type": "link",
             "instructions": "Support text shown under the button.",
             "required": 0,
             "conditional_logic": 0,
@@ -234,12 +234,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "How we estimate your earnings",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "return_format": "array",
+            "allow_in_bindings": 0
         },
         {
             "key": "field_69d2f6c3eb594",
@@ -340,5 +336,5 @@
     "description": "Benefits + estimated earnings component.",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1775433481
+    "modified": 1777963715
 }

@@ -16088,8 +16088,8 @@ a {
 }
 .component-faq .faq-list .faq-item .faq-question .faq-icon {
   display: inline-block;
-  width: 1.25rem;
-  height: 1.25rem;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
   background-color: #004c6c;
   border-radius: 50%;
   position: relative;
@@ -17389,8 +17389,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+}
+.component-benefits_earnings .earnings-card-note a {
   color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .component-benefits_earnings .earnings-note-icon {
   display: inline-flex;

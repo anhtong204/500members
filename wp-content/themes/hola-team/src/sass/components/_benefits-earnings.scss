@@ -210,8 +210,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    color: #fff;
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
   }
 
   .earnings-note-icon {
