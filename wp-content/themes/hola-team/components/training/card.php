@@ -16,15 +16,18 @@ if (!empty($card_terms) && !is_wp_error($card_terms)) {
 	}
 }
 $term_classes = implode(' ', $term_slugs);
-$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
+$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+if (!$thumbnail_url) {
+	$thumbnail_url = get_template_directory_uri() . '/assets/img/default.png';
+}
 $card_link = get_permalink();
 ?>
 <article class="training-item" data-category="<?php echo esc_attr($term_classes ? $term_classes : 'all'); ?>">
 	<div class="training-card">
 		<a href="<?php echo esc_url($card_link); ?>">
 			<?php if ($thumbnail_url): ?>
-				<div class="training-card-image"
-					style="background-image:url('<?php echo esc_url($thumbnail_url); ?>')"></div>
+				<div class="training-card-image" style="background-image:url('<?php echo esc_url($thumbnail_url); ?>')">
+				</div>
 			<?php endif; ?>
 		</a>
 		<div class="training-card-body">

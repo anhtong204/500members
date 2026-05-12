@@ -51,4 +51,5 @@ node_modules
 phpcs.xml
 dist/
 dist-product/
-**/img
+!.eslintrc.json
+!.stylelintrc.json

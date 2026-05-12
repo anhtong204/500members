@@ -35,37 +35,10 @@
     });
   };
 
-  // Sidebar accordion + client-side category filtering
+  // Sidebar accordion + category navigation
   function initListingSidebar($layout) {
     var $wrapper = $layout.find('.training-listing-wrapper');
     if (!$wrapper.length) return;
-
-    var $items = $layout.find('.training-item');
-    var isArchivePage = $layout.closest('.component-training').length === 0;
-
-    // Filter cards by category slug
-    function filterByCategory(slug) {
-      if (!slug || slug === 'all') {
-        $items.show();
-      } else {
-        $items.each(function() {
-          var $item = $(this);
-          var cats = $item.data('category') ? String($item.data('category')).split(' ') : [];
-          $item.toggle(cats.indexOf(slug) !== -1);
-        });
-      }
-    }
-
-    // Set active state on sidebar categories (both desktop & mobile)
-    function setActiveCategory(slug) {
-      $layout.find('.training-sidebar-category').removeClass('active');
-      $layout.find('.training-sidebar-category-btn').removeClass('active');
-
-      if (slug) {
-        $layout.find('.training-sidebar-category[data-term="' + slug + '"]').addClass('active');
-        $layout.find('.training-sidebar-category[data-term="' + slug + '"] > .training-sidebar-category-btn').addClass('active');
-      }
-    }
 
     // Accordion: init visibility
     function initAccordion($container) {
@@ -82,37 +55,16 @@
       }
     }
 
-    // Handle category link click: filter + pushState + accordion
+    // Handle category link click: navigate to category archive
     function bindCategoryClicks($container) {
       $container.find('.training-sidebar-category-btn').on('click', function(e) {
         e.preventDefault();
 
         var $link = $(this);
-        var $category = $link.closest('.training-sidebar-category');
-        var slug = $category.data('term');
         var url = $link.attr('href');
-        var isActive = $category.hasClass('active');
 
-        // Accordion: close all, toggle clicked
-        $container.find('.training-sidebar-category').removeClass('active');
-        $container.find('.training-sidebar-lessons').slideUp(200);
-
-        if (!isActive) {
-          $category.addClass('active');
-          $category.find('.training-sidebar-lessons').slideDown(200);
-        }
-
-        // On listing component page: filter cards + pushState
-        if (!isArchivePage) {
-          setActiveCategory(slug);
-          filterByCategory(slug);
-
-          // Update URL without reload
-          if (url && window.history.pushState) {
-            window.history.pushState({ category: slug }, '', url);
-          }
-        } else {
-          // On archive page: navigate to the category page
+        // Navigate to the category page (works with server-side pagination)
+        if (url) {
           window.location.href = url;
         }
       });
@@ -148,21 +100,6 @@
         if ($(e.target).is('.training-mobile-modal')) {
           $mobileModal.removeClass('show');
           $('body').css('overflow', '');
-        }
-      });
-    }
-
-    // Handle browser back/forward
-    if (!isArchivePage) {
-      $(window).on('popstate', function(e) {
-        var state = e.originalEvent.state;
-        if (state && state.category) {
-          setActiveCategory(state.category);
-          filterByCategory(state.category);
-        } else {
-          // Reset to show all
-          setActiveCategory('all');
-          filterByCategory('all');
         }
       });
     }

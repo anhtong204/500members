@@ -1,6 +1,7 @@
 <?php
 $current_term_slug = null;
 $current_post_id = null;
+$training_paged = max(1, get_query_var('paged'));
 $training_terms = get_terms(
 	array(
 		'taxonomy' => 'training_category',
@@ -10,7 +11,8 @@ $training_terms = get_terms(
 $training_query = new WP_Query(
 	array(
 		'post_type' => 'training',
-		'posts_per_page' => -1,
+		'posts_per_page' => 15,
+		'paged' => $training_paged,
 		'post_status' => 'publish',
 	)
 );
@@ -67,6 +69,14 @@ $training_query = new WP_Query(
 						<?php include(locate_template('components/training/card.php')); ?>
 					<?php endwhile; ?>
 				</div>
+
+				<?php
+				// Pagination
+				holateam_pagination(array(
+					'total' => $training_query->max_num_pages,
+					'current' => $training_paged,
+				));
+				?>
 
 				<?php wp_reset_postdata(); ?>
 			<?php else: ?>

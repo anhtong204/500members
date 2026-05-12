@@ -61,10 +61,11 @@ $all_active = empty($active_slug);
 						$duration = get_field('training_duration');
 						$lesson_id = get_the_ID();
 						$is_current = ($active_post_id && $lesson_id === $active_post_id);
+						$lesson_url = add_query_arg('cat', $term->slug, get_permalink());
 						?>
 						<li class="training-sidebar-lesson<?php echo $is_current ? ' is-current' : ''; ?>"
 							data-post-id="<?php echo esc_attr($lesson_id); ?>">
-							<a href="<?php echo esc_url(get_permalink()); ?>" class="training-sidebar-lesson-link">
+							<a href="<?php echo esc_url($lesson_url); ?>" class="training-sidebar-lesson-link">
 								<span class="training-sidebar-lesson-icon-wrapper">
 									<?php if ($is_current): ?>
 										<span class="training-sidebar-lesson-icon training-sidebar-lesson-icon--playing">

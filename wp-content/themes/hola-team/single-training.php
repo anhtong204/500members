@@ -16,10 +16,15 @@ $training_duration = get_field('training_duration');
 $training_media_type = get_field('training_media_type');
 $training_media_link = get_field('training_media_link');
 
-// Get the current post's categories
+// Get the active category from URL param (e.g. ?cat=category-slug)
+// Falls back to the first category if no param is present
 $post_terms = get_the_terms($current_post_id, 'training_category');
-$current_term = (!empty($post_terms) && !is_wp_error($post_terms)) ? $post_terms[0] : null;
-$current_term_slug = $current_term ? $current_term->slug : '';
+$current_term_slug = '';
+if (isset($_GET['cat']) && !empty($_GET['cat'])) {
+	$current_term_slug = sanitize_text_field($_GET['cat']);
+} elseif (!empty($post_terms) && !is_wp_error($post_terms)) {
+	$current_term_slug = $post_terms[0]->slug;
+}
 
 // Get all training categories for sidebar
 $training_terms = get_terms(

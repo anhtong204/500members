@@ -16,9 +16,9 @@
   .steps-card {
     height: 100%;
     background: #fff;
-    border: 1px solid rgb(0 0 0 / 8%);
+    border: 1px solid #339cc8;
     border-radius: 18px;
-    padding-top: 2rem;
+    padding: 2rem 6px 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +28,7 @@
     // border-image-source: linear-gradient(127.27deg, #d5cfc6 2.63%, #f8f4ee 38.21%, #e9e3d9 66.39%, #a69f94 98.73%);
 
     @include min-breakpoint(768) {
-      padding-top: 2.5rem;
+      padding: 2.5rem 6px 6px;
     }
 
     .steps-card-content {
@@ -79,8 +79,8 @@
 
     .steps-title {
       margin-bottom: 5px;
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 14px;
       color: $primary;
       font-family: $font-body;
     }
