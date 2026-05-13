@@ -17149,7 +17149,7 @@ a {
 .training-sidebar-lesson-icon {
   display: inline-flex;
   position: relative;
-  top: 4px;
+  top: 5px;
 }
 
 .training-sidebar-lesson.is-current .training-sidebar-lesson-link {

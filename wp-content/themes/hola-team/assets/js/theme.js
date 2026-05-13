@@ -9368,6 +9368,36 @@
 	  });
 	})(jQuery);
 
+	const initializeFaq = function (block) {
+	  // `block` is expected to be the root .component-faq element.
+	  // If it's a wrapper, locate the inner component.
+	  const $faq = block.hasClass('component-faq') ? block : block.find('.component-faq');
+	  $faq.find('.faq-question').on('click', function () {
+	    const $button = jQuery(this);
+	    const $item = $button.closest('.faq-item');
+	    const isOpen = $item.hasClass('open'); // Close all other items
+
+	    $item.siblings('.faq-item').removeClass('open').find('.faq-question').attr('aria-expanded', 'false');
+	    $item.siblings('.faq-item').find('.faq-answer').attr('aria-hidden', 'true'); // Toggle current
+
+	    if (isOpen) {
+	      $item.removeClass('open');
+	      $button.attr('aria-expanded', 'false');
+	      $item.find('.faq-answer').attr('aria-hidden', 'true');
+	    } else {
+	      $item.addClass('open');
+	      $button.attr('aria-expanded', 'true');
+	      $item.find('.faq-answer').attr('aria-hidden', 'false');
+	    }
+	  });
+	};
+
+	jQuery(document).ready(function ($) {
+	  $('.component-faq').each(function () {
+	    initializeFaq($(this));
+	  });
+	});
+
 	/* global holaTeamJoinAjax, grecaptcha */
 	jQuery(document).ready(function ($) {
 	  if ($('#join-newsletter-form').length === 0) {
@@ -9440,36 +9470,6 @@
 	      }
 	    });
 	  }
-	});
-
-	const initializeFaq = function (block) {
-	  // `block` is expected to be the root .component-faq element.
-	  // If it's a wrapper, locate the inner component.
-	  const $faq = block.hasClass('component-faq') ? block : block.find('.component-faq');
-	  $faq.find('.faq-question').on('click', function () {
-	    const $button = jQuery(this);
-	    const $item = $button.closest('.faq-item');
-	    const isOpen = $item.hasClass('open'); // Close all other items
-
-	    $item.siblings('.faq-item').removeClass('open').find('.faq-question').attr('aria-expanded', 'false');
-	    $item.siblings('.faq-item').find('.faq-answer').attr('aria-hidden', 'true'); // Toggle current
-
-	    if (isOpen) {
-	      $item.removeClass('open');
-	      $button.attr('aria-expanded', 'false');
-	      $item.find('.faq-answer').attr('aria-hidden', 'true');
-	    } else {
-	      $item.addClass('open');
-	      $button.attr('aria-expanded', 'true');
-	      $item.find('.faq-answer').attr('aria-hidden', 'false');
-	    }
-	  });
-	};
-
-	jQuery(document).ready(function ($) {
-	  $('.component-faq').each(function () {
-	    initializeFaq($(this));
-	  });
 	});
 
 	var slick_min = {exports: {}};
@@ -9648,6 +9648,38 @@
 	    });
 	  });
 	})(jQuery);
+
+	const initializeTestimonials = function (block) {
+	  const settings = block.data('settings') || {};
+	  const defaults = {
+	    dots: false,
+	    arrows: false,
+	    infinite: true,
+	    speed: 600,
+	    slidesToShow: 3,
+	    slidesToScroll: 3,
+	    responsive: [{
+	      breakpoint: 992,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 2
+	      }
+	    }, {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }]
+	  };
+	  block.slick(jQuery.extend(true, {}, defaults, settings));
+	};
+
+	jQuery(document).ready(function ($) {
+	  $('.holateam-testimonials').each(function () {
+	    initializeTestimonials($(this));
+	  });
+	});
 
 	(function ($) {
 	  const initializeTraining = function (block) {
@@ -9904,38 +9936,6 @@
 	    });
 	  });
 	})(jQuery);
-
-	const initializeTestimonials = function (block) {
-	  const settings = block.data('settings') || {};
-	  const defaults = {
-	    dots: false,
-	    arrows: false,
-	    infinite: true,
-	    speed: 600,
-	    slidesToShow: 3,
-	    slidesToScroll: 3,
-	    responsive: [{
-	      breakpoint: 992,
-	      settings: {
-	        slidesToShow: 2,
-	        slidesToScroll: 2
-	      }
-	    }, {
-	      breakpoint: 768,
-	      settings: {
-	        slidesToShow: 1,
-	        slidesToScroll: 1
-	      }
-	    }]
-	  };
-	  block.slick(jQuery.extend(true, {}, defaults, settings));
-	};
-
-	jQuery(document).ready(function ($) {
-	  $('.holateam-testimonials').each(function () {
-	    initializeTestimonials($(this));
-	  });
-	});
 
 	exports.Alert = alert$1;
 	exports.Button = button;

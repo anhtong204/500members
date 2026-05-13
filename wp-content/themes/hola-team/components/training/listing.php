@@ -1,21 +1,13 @@
 <?php
 $current_term_slug = null;
 $current_post_id = null;
-$training_paged = max(1, get_query_var('paged'));
 $training_terms = get_terms(
 	array(
 		'taxonomy' => 'training_category',
 		'hide_empty' => true,
 	)
 );
-$training_query = new WP_Query(
-	array(
-		'post_type' => 'training',
-		'posts_per_page' => 15,
-		'paged' => $training_paged,
-		'post_status' => 'publish',
-	)
-);
+$default_img = get_template_directory_uri() . '/assets/img/default.png';
 ?>
 
 <div class="<?php echo esc_attr($container_class); ?> training-component training-listing-layout">
@@ -60,27 +52,51 @@ $training_query = new WP_Query(
 				<?php get_component_title($component_h1, $component_title, $component_sub_title, true); ?>
 			</div>
 
-			<?php if ($training_query->have_posts()): ?>
-				<h3 class="training-listing-section-title"><?php esc_html_e('Popular lessons', 'holateam'); ?></h3>
+			<?php if (!empty($training_terms) && !is_wp_error($training_terms)): ?>
+				<h3 class="training-listing-section-title"><?php esc_html_e('Training Categories', 'holateam'); ?></h3>
 
 				<div class="training-listing-grid">
-					<?php while ($training_query->have_posts()):
-						$training_query->the_post(); ?>
-						<?php include(locate_template('components/training/card.php')); ?>
-					<?php endwhile; ?>
+					<?php foreach ($training_terms as $term):
+						$term_link = get_term_link($term);
+						if (is_wp_error($term_link)) {
+							continue;
+						}
+						$term_image = get_field('image', $term);
+						$term_img_url = !empty($term_image['url']) ? $term_image['url'] : $default_img;
+						$lesson_count = $term->count;
+						?>
+						<article class="training-item">
+							<div class="training-card">
+								<a href="<?php echo esc_url($term_link); ?>">
+									<div class="training-card-image" style="background-image:url('<?php echo esc_url($term_img_url); ?>')">
+									</div>
+								</a>
+								<div class="training-card-body">
+									<h3 class="training-card-title">
+										<a href="<?php echo esc_url($term_link); ?>"><?php echo esc_html($term->name); ?></a>
+									</h3>
+									<div class="training-card-category">
+										<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M7 13.5C10.5899 13.5 13.5 10.5899 13.5 7C13.5 3.41015 10.5899 0.5 7 0.5C3.41015 0.5 0.5 3.41015 0.5 7C0.5 10.5899 3.41015 13.5 7 13.5Z"
+												stroke="#003F5A" stroke-linecap="round" stroke-linejoin="round" />
+											<path d="M6.27777 4.11111V7.72223H9.88888" stroke="#003F5A" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+										<div class="training-card-duration">
+											<?php printf(
+												/* translators: %d: number of lessons */
+												esc_html(_n('%d lesson', '%d lessons', $lesson_count, 'holateam')),
+												$lesson_count
+											); ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					<?php endforeach; ?>
 				</div>
-
-				<?php
-				// Pagination
-				holateam_pagination(array(
-					'total' => $training_query->max_num_pages,
-					'current' => $training_paged,
-				));
-				?>
-
-				<?php wp_reset_postdata(); ?>
 			<?php else: ?>
-				<p><?php esc_html_e('No training items found.', 'holateam'); ?></p>
+				<p><?php esc_html_e('No training categories found.', 'holateam'); ?></p>
 			<?php endif; ?>
 		</div>
 	</div>
