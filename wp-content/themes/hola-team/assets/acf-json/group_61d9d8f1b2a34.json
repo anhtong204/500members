@@ -50,26 +50,29 @@
         },
         {
             "key": "field_61d9d8f1b2a37",
-            "label": "Items per row",
-            "name": "items_per_page",
+            "label": "Modules",
+            "name": "modules",
             "aria-label": "",
-            "type": "number",
-            "instructions": "The number of trainings to display.",
+            "type": "taxonomy",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": 8,
-            "min": 1,
-            "max": "",
-            "allow_in_bindings": 1,
-            "placeholder": "",
-            "step": 1,
-            "prepend": "",
-            "append": ""
+            "taxonomy": "training_category",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_61d9d8f1b2a3a",
@@ -153,5 +156,5 @@
     "description": "Fields for the Training component layout.",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1775551735
+    "modified": 1778860697
 }

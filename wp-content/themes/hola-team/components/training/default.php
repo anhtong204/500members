@@ -1,10 +1,10 @@
 <?php
-$items_per_page = absint($row['items_per_page'] ?? 8);
+$modules = $row['modules'] ?? [];
 $training_terms = get_terms(
 	array(
 		'taxonomy' => 'training_category',
 		'hide_empty' => true,
-		'number' => $items_per_page,
+		'include' => $modules,
 	)
 );
 $default_img = get_template_directory_uri() . '/assets/img/default.png';
@@ -29,7 +29,8 @@ $default_img = get_template_directory_uri() . '/assets/img/default.png';
 				<article class="training-item">
 					<div class="training-card">
 						<a href="<?php echo esc_url($term_link); ?>">
-							<div class="training-card-image" style="background-image:url('<?php echo esc_url($term_img_url); ?>')">
+							<div class="training-card-image"
+								style="background-image:url('<?php echo esc_url($term_img_url); ?>')">
 							</div>
 						</a>
 						<div class="training-card-body">
@@ -38,7 +39,8 @@ $default_img = get_template_directory_uri() . '/assets/img/default.png';
 							</h3>
 							<div class="training-card-category">
 								<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M7 13.5C10.5899 13.5 13.5 10.5899 13.5 7C13.5 3.41015 10.5899 0.5 7 0.5C3.41015 0.5 0.5 3.41015 0.5 7C0.5 10.5899 3.41015 13.5 7 13.5Z"
+									<path
+										d="M7 13.5C10.5899 13.5 13.5 10.5899 13.5 7C13.5 3.41015 10.5899 0.5 7 0.5C3.41015 0.5 0.5 3.41015 0.5 7C0.5 10.5899 3.41015 13.5 7 13.5Z"
 										stroke="#003F5A" stroke-linecap="round" stroke-linejoin="round" />
 									<path d="M6.27777 4.11111V7.72223H9.88888" stroke="#003F5A" stroke-linecap="round"
 										stroke-linejoin="round" />

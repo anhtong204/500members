@@ -1,12 +1,7 @@
 <?php
+$modules = $row['modules'] ?? [];
 $current_term_slug = null;
 $current_post_id = null;
-$training_terms = get_terms(
-	array(
-		'taxonomy' => 'training_category',
-		'hide_empty' => true,
-	)
-);
 $default_img = get_template_directory_uri() . '/assets/img/default.png';
 ?>
 
@@ -19,7 +14,7 @@ $default_img = get_template_directory_uri() . '/assets/img/default.png';
 				<path d="M2.25 9H15.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
 				<path d="M2.25 13.5H15.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
 			</svg>
-			<?php esc_html_e('All lessons', 'holateam'); ?>
+			<?php esc_html_e('Popular lessons', 'holateam'); ?>
 		</button>
 
 		<!-- Mobile: Category modal -->
@@ -45,6 +40,16 @@ $default_img = get_template_directory_uri() . '/assets/img/default.png';
 			<?php include(locate_template('components/training/sidebar.php')); ?>
 		</aside>
 
+		<?php
+		$training_terms = get_terms(
+			array(
+				'taxonomy' => 'training_category',
+				'hide_empty' => false,
+				'include' => $modules
+			)
+		);
+		?>
+
 		<!-- Main Content -->
 		<div class="training-listing-main">
 			<!-- Header Banner -->
@@ -53,7 +58,7 @@ $default_img = get_template_directory_uri() . '/assets/img/default.png';
 			</div>
 
 			<?php if (!empty($training_terms) && !is_wp_error($training_terms)): ?>
-				<h3 class="training-listing-section-title"><?php esc_html_e('Training Categories', 'holateam'); ?></h3>
+				<h3 class="training-listing-section-title"><?php esc_html_e('Popular Lessons', 'holateam'); ?></h3>
 
 				<div class="training-listing-grid">
 					<?php foreach ($training_terms as $term):
@@ -68,7 +73,8 @@ $default_img = get_template_directory_uri() . '/assets/img/default.png';
 						<article class="training-item">
 							<div class="training-card">
 								<a href="<?php echo esc_url($term_link); ?>">
-									<div class="training-card-image" style="background-image:url('<?php echo esc_url($term_img_url); ?>')">
+									<div class="training-card-image"
+										style="background-image:url('<?php echo esc_url($term_img_url); ?>')">
 									</div>
 								</a>
 								<div class="training-card-body">
@@ -76,8 +82,10 @@ $default_img = get_template_directory_uri() . '/assets/img/default.png';
 										<a href="<?php echo esc_url($term_link); ?>"><?php echo esc_html($term->name); ?></a>
 									</h3>
 									<div class="training-card-category">
-										<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M7 13.5C10.5899 13.5 13.5 10.5899 13.5 7C13.5 3.41015 10.5899 0.5 7 0.5C3.41015 0.5 0.5 3.41015 0.5 7C0.5 10.5899 3.41015 13.5 7 13.5Z"
+										<svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M7 13.5C10.5899 13.5 13.5 10.5899 13.5 7C13.5 3.41015 10.5899 0.5 7 0.5C3.41015 0.5 0.5 3.41015 0.5 7C0.5 10.5899 3.41015 13.5 7 13.5Z"
 												stroke="#003F5A" stroke-linecap="round" stroke-linejoin="round" />
 											<path d="M6.27777 4.11111V7.72223H9.88888" stroke="#003F5A" stroke-linecap="round"
 												stroke-linejoin="round" />
@@ -96,7 +104,7 @@ $default_img = get_template_directory_uri() . '/assets/img/default.png';
 					<?php endforeach; ?>
 				</div>
 			<?php else: ?>
-				<p><?php esc_html_e('No training categories found.', 'holateam'); ?></p>
+				<p><?php esc_html_e('No popular lessons found.', 'holateam'); ?></p>
 			<?php endif; ?>
 		</div>
 	</div>

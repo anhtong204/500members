@@ -10,9 +10,12 @@
  * - $current_post_id   (int|null)    — ID of the current training post (single page only)
  */
 
-if (empty($training_terms) || is_wp_error($training_terms)) {
-	return;
-}
+$training_terms = get_terms(
+	array(
+		'taxonomy' => 'training_category',
+		'hide_empty' => true,
+	)
+);
 
 $active_slug = isset($current_term_slug) ? $current_term_slug : '';
 $active_post_id = isset($current_post_id) ? (int) $current_post_id : 0;
@@ -23,7 +26,7 @@ $all_active = empty($active_slug);
 	<li class="training-sidebar-category training-sidebar-category--all<?php echo $all_active ? ' active' : ''; ?>"
 		data-term="all">
 		<a href="/free-training/" class="training-sidebar-category-btn<?php echo $all_active ? ' active' : ''; ?>">
-			<?php esc_html_e('All lessons', 'holateam'); ?>
+			<?php esc_html_e('Popular lessons', 'holateam'); ?>
 		</a>
 	</li>
 	<?php foreach ($training_terms as $term):
@@ -99,3 +102,5 @@ $all_active = empty($active_slug);
 		wp_reset_postdata();
 	endforeach; ?>
 </ul>
+
+<?php $training_terms = null; ?>
